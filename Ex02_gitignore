@@ -1,3 +1,7 @@
 1. .gitignore 파일
     - GitHub에 올리지 말아야 할 파일들을 설정할 수 있는 파일
     - 해당 파일에 대한 상태를 Git이 추적하지 않음
+
+2. .gitignore에 작성해도 계속 추적할 경우 (깃허브에 파일이 계속 올라감)
+    - git rm -r --cached . 입력 후 다시 add, commit, push
+    - 이미 추적중인 파일을 제거하는 명령어
