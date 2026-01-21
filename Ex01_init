@@ -15,7 +15,7 @@
         > origin이라는 원격저장소에 master로 git에 업로드하겠다
 
 4. 깃허브에 코드 올릴때 커맨드
-    - git add .
+    - git add . 
     - git commit -m "기록용 말 아무거나"
     - git push origin master
     > git push -f origin master << 강제로 업로드, 협업할 때 xxx, 다른 사람 코드 날라감
