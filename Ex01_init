@@ -16,6 +16,8 @@
 
 4. 깃허브에 코드 올릴때 커맨드
     - git add . 
+    > 변경된 파일을 stageing area에 추가
     - git commit -m "기록용 말 아무거나"
+    > 저장
     - git push origin master
     > git push -f origin master << 강제로 업로드, 협업할 때 xxx, 다른 사람 코드 날라감
