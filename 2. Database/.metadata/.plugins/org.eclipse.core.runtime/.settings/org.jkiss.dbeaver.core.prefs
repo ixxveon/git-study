@@ -6,4 +6,4 @@ org.jkiss.dbeaver.core.confirm.exit=always
 sample.database.canceled=true
 sql.format.keywordCase=UPPER
 tipOfTheDayInitializer.notFirstRun=true
-ui.auto.update.check.time=1769043504445
+ui.auto.update.check.time=1769127972754

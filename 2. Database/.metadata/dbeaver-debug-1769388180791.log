@@ -1,0 +1,360 @@
+2026-01-23 09:26:08.430 - DBeaver 25.3.3.202601181752 is starting
+2026-01-23 09:26:08.431 - OS: Windows 11 10.0 (amd64)
+2026-01-23 09:26:08.432 - Java version: 21.0.8 by Eclipse Adoptium (64bit)
+2026-01-23 09:26:08.432 - Install path: 'C:\Users\adminn\AppData\Local\DBeaver'
+2026-01-23 09:26:08.432 - Instance path: 'file:/C:/study/2. Database/'
+2026-01-23 09:26:08.433 - Memory available 64Mb/1024Mb
+2026-01-23 09:26:08.442 - Create display
+2026-01-23 09:26:08.525 - Initialize desktop platform...
+2026-01-23 09:26:08.652 - BounceCastle bundle found. Use JCE provider BC
+> Start Core File Systems [org.eclipse.core.filesystem 1.11.400.v20251107-0507]
+> Start Core Resource Management [org.eclipse.core.resources 3.23.100.v20251106-1705]
+> Start 팀 지원 핵심 [org.eclipse.team.core 3.10.900.v20251104-0924]
+> Start DBeaver UI Navigator [org.jkiss.dbeaver.ui.navigator 1.0.171.202601181752]
+2026-01-23 09:26:08.807 - Initialize base platform...
+2026-01-23 09:26:08.815 - send collected statistics
+2026-01-23 09:26:08.826 - Platform initialized (301ms)
+> Start Equinox Java Authentication and Authorization Service (JAAS) [org.eclipse.equinox.security 1.4.700.v20250622-1644]
+> Start 인터넷 연결 관리 사용자 인터페이스 [org.eclipse.ui.net 1.5.500.v20250611-0855]
+> Start Internet Connection Management [org.eclipse.core.net 1.5.800.v20250613-1119]
+2026-01-23 09:26:08.935 - Proxy service 'org.eclipse.core.net.proxy.IProxyService' loaded
+2026-01-23 09:26:09.021 - Starting instance server at http://localhost:51622
+2026-01-23 09:26:09.027 - Run workbench
+> Start Eclipse e4 작업영역 SWT [org.eclipse.e4.ui.workbench.swt 0.17.1000.v20251023-0611]
+> Start Eclipse Application Services [org.eclipse.e4.core.services 2.5.300.v20251112-1253]
+> Start Eclipse UI Application Services [org.eclipse.e4.ui.services 1.6.600.v20251023-1358]
+> Start Eclipse e4 Progress View [org.eclipse.e4.ui.progress 0.4.900.v20251023-1511]
+> Start Eclipse Bindings Support [org.eclipse.e4.ui.bindings 0.14.800.v20250916-0937]
+> Start Eclipse e4 core commands [org.eclipse.e4.core.commands 1.1.700.v20250916-0927]
+> Start EMF XML/XMI Persistence [org.eclipse.emf.ecore.xmi 2.39.0.v20250910-1205]
+> Start Eclipse CSS SWT Theme Support [org.eclipse.e4.ui.css.swt.theme 0.14.600.v20251023-0615]
+> Start Eclipse e4 작업영역 기능 추가 [org.eclipse.e4.ui.workbench.addons.swt 1.5.900.v20251007-0832]
+Warning: NLS unused message: WorkbenchPreference_reuseEditorsThreshold in: org.eclipse.ui.internal.messages
+Warning: NLS unused message: 이유 in: org.eclipse.ui.internal.messages
+> Start Eclipse e4 작업영역 SWT 렌더러 [org.eclipse.e4.ui.workbench.renderers.swt 0.16.1000.v20251114-0005]
+> Start Eclipse Dependency Injection Extensions [org.eclipse.e4.core.di.extensions 0.18.300.v20240413-1529]
+> Start DBeaver AI Model [org.jkiss.dbeaver.model.ai 2.0.14.202601181752]
+> Start DBeaver AI UI [org.jkiss.dbeaver.ui.ai 1.0.73.202601181752]
+> Start Eclipse CSS SWT Support [org.eclipse.e4.ui.css.swt 0.15.700.v20251023-1511]
+> Start JFace 텍스트 [org.eclipse.jface.text 3.29.0.v20251112-0859]
+2026-01-23 09:26:10.374 - Configure workbench window
+> Start DBeaver SQL Model [org.jkiss.dbeaver.model.sql 1.0.161.202601181752]
+2026-01-23 09:26:10.515 - Total database drivers: 127 (127)
+> Start 도움말 시스템 코어 [org.eclipse.help 3.10.600.v20250613-0437]
+2026-01-23 09:26:10.576 - Create actions
+2026-01-23 09:26:10.983 - Initialize workbench window
+2026-01-23 09:26:10.995 - Finish initialization
+> Start 기본 문서 편집기 [org.eclipse.ui.editors 3.20.200.v20251125-0939]
+> Start 텍스트 편집기 프레임워크 [org.eclipse.ui.workbench.texteditor 3.19.400.v20251105-0815]
+> Start DBeaver UI Editors - Data [org.jkiss.dbeaver.ui.editors.data 1.0.171.202601181752]
+> Start DBeaver UI Editors - SQL [org.jkiss.dbeaver.ui.editors.sql 1.0.171.202601181752]
+Warning: NLS unused message: FindReplace_RegExCheckbox_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_WrapCheckBox_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_IncrementalCheckBox_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_Options in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_ReplaceSelectionButton_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_SelectedRangeRadioButton_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_SelectAllButton_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_GlobalRadioButton_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_WholeWordCheckBox_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_ReplaceFindButton_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_BackwardRadioButton_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_CloseButton_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_Replace_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_CaseCheckBox_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_Status_replacements_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_title in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_Direction in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_ReplaceAllButton_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_Scope in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_Find_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_ForwardRadioButton_label in: org.eclipse.ui.texteditor.EditorMessages
+Warning: NLS unused message: FindReplace_FindNextButton_label in: org.eclipse.ui.texteditor.EditorMessages
+> Start DBeaver SQL Terminal [org.jkiss.dbeaver.ui.editors.sql.terminal 1.0.147.202601181752]
+> Start 핵심 비교 지원 [org.eclipse.compare.core 3.8.800.v20250718-1505]
+> Start DBeaver Sample Database [org.jkiss.dbeaver.ui.config.sample 1.0.208.202601181752]
+2026-01-23 09:26:12.763 - Open [https://dbeaver.io/product/version.xml]
+> Start DBeaver Dashboard UI [org.jkiss.dbeaver.ui.dashboard 1.0.168.202601181752]
+> Start GEF Classic Draw2d [org.eclipse.draw2d 3.21.0.202512020742]
+> Start GEF Classic GEF (MVC) [org.eclipse.gef 3.24.0.202511201732]
+> Start DBeaver ERD UI [org.jkiss.dbeaver.ui.editors.erd 3.1.12.202601181752]
+> Start DBeaver ERD Model [org.jkiss.dbeaver.model.erd 1.1.12.202601181752]
+> Start DBeaver JDBC Model [org.jkiss.dbeaver.model.jdbc 1.0.64.202601181752]
+> Start DBeaver MySQL Support [org.jkiss.dbeaver.ext.mysql 2.1.256.202601181752]
+> Start 콘솔 [org.eclipse.ui.console 3.15.0.v20251113-1013]
+> Start 디버그 핵심 [org.eclipse.debug.core 3.23.200.v20251107-0507]
+> Start DBeaver Tasks - Native Tools UI [org.jkiss.dbeaver.tasks.native.ui 1.0.149.202601181752]
+> Start DBeaver MySQL UI Support [org.jkiss.dbeaver.ext.mysql.ui 1.0.163.202601181752]
+> Start DBeaver Tasks - General UI [org.jkiss.dbeaver.tasks.ui 1.0.149.202601181752]
+2026-01-23 09:26:13.454 - Connect with 'localhost' (mysql8-19be3379628-6741b331bc750407)
+2026-01-23 09:26:13.479 - Execution context opened (localhost; Main; 0)
+> Start DBeaver GIS Support [org.jkiss.dbeaver.data.gis 1.0.195.202601181752]
+2026-01-23 09:26:13.637 - Execution context opened (localhost; Metadata; 1)
+2026-01-23 09:26:13.705 - Connected (mysql8-19be3379628-6741b331bc750407, MySQL Connector/J [mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c)])
+2026-01-23 09:26:13.738 - Execution context opened (localhost; SQLEditor <Script-1.sql>; 2)
+> Start DBeaver SQL Language Semantic Model [org.jkiss.dbeaver.model.lsm 1.0.66.202601181752]
+> Start DBeaver Data Transfer [org.jkiss.dbeaver.data.transfer 2.0.155.202601181752]
+2026-01-23 09:45:22.301 - Search condition or value expression expected while facing with anyUnexpected
+2026-01-23 11:02:06.881 - Restore default sash weights
+2026-01-23 11:02:07.052 - Execution context opened (localhost; SQLEditor <1.DML,DDL정리.sql>; 3)
+2026-01-23 11:02:44.530 - Restore default sash weights
+2026-01-23 11:02:44.620 - Execution context opened (localhost; SQLEditor <Script-2.sql>; 4)
+2026-01-23 11:02:48.288 - Execution context opened (localhost; SQLEditor <Script-3.sql>; 5)
+2026-01-23 11:03:35.636 - Restore default sash weights
+2026-01-23 11:03:35.748 - Execution context opened (localhost; SQLEditor <Script.sql>; 6)
+2026-01-23 11:03:37.098 - Execution context closed (localhost, 6)
+2026-01-23 11:03:38.782 - Execution context closed (localhost, 3)
+2026-01-23 11:05:10.548 - Execution context opened (localhost; SQLEditor <Script-4.sql>; 7)
+2026-01-23 11:21:43.162 - Error while analyzing query text: UPDATE salaries SET salary = 65000 WHERE emp_no = 1
+java.lang.IllegalStateException: Rows data was not resolved yet
+	at org.jkiss.dbeaver.model.sql.semantics.model.select.SQLQueryRowsSourceModel.getRowsDataContext(SQLQueryRowsSourceModel.java:52)
+	at org.jkiss.dbeaver.model.sql.semantics.model.dml.SQLQueryUpdateModel.resolveValueRelations(SQLQueryUpdateModel.java:278)
+	at org.jkiss.dbeaver.model.sql.semantics.model.SQLQueryModel.resolveRelations(SQLQueryModel.java:73)
+	at org.jkiss.dbeaver.model.sql.semantics.SQLQueryModelRecognizer.recognizeQuery(SQLQueryModelRecognizer.java:154)
+	at org.jkiss.dbeaver.model.sql.semantics.SQLQueryModelRecognizer.recognizeQuery(SQLQueryModelRecognizer.java:1026)
+	at org.jkiss.dbeaver.ui.editors.sql.semantics.SQLBackgroundParsingJob.doWork(SQLBackgroundParsingJob.java:606)
+	at org.jkiss.dbeaver.ui.editors.sql.semantics.SQLBackgroundParsingJob$1.run(SQLBackgroundParsingJob.java:86)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:110)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2026-01-23 11:23:51.230 - Error while analyzing query text: DELETE FROM salaries w
+SELECT * FROM titles
+WHERE to_date IS NOT NULL
+java.lang.UnsupportedOperationException: Symbol entry origin has already been set
+	at org.jkiss.dbeaver.model.sql.semantics.SQLQueryLexicalScopeItem.setOrigin(SQLQueryLexicalScopeItem.java:51)
+	at org.jkiss.dbeaver.model.sql.semantics.SQLQuerySymbolEntry.setOrigin(SQLQuerySymbolEntry.java:90)
+	at org.jkiss.dbeaver.model.sql.semantics.SQLQuerySemanticUtils.setNamePartsDefinition(SQLQuerySemanticUtils.java:158)
+	at org.jkiss.dbeaver.model.sql.semantics.SQLQuerySemanticUtils.setNamePartsDefinition(SQLQuerySemanticUtils.java:125)
+	at org.jkiss.dbeaver.model.sql.semantics.model.select.SQLQueryRowsTableDataModel.resolveRowSourcesImpl(SQLQueryRowsTableDataModel.java:170)
+	at org.jkiss.dbeaver.model.sql.semantics.model.select.SQLQueryRowsSourceModel.resolveRowSources(SQLQueryRowsSourceModel.java:91)
+	at org.jkiss.dbeaver.model.sql.semantics.model.select.SQLQueryRowsCorrelatedSourceModel.resolveRowSourcesImpl(SQLQueryRowsCorrelatedSourceModel.java:118)
+	at org.jkiss.dbeaver.model.sql.semantics.model.select.SQLQueryRowsSourceModel.resolveRowSources(SQLQueryRowsSourceModel.java:91)
+	at org.jkiss.dbeaver.model.sql.semantics.model.dml.SQLQueryDeleteModel.resolveRowsReferencesImpl(SQLQueryDeleteModel.java:91)
+	at org.jkiss.dbeaver.model.sql.semantics.model.dml.SQLQueryDMLStatementModel.resolveObjectAndRowsReferences(SQLQueryDMLStatementModel.java:54)
+	at org.jkiss.dbeaver.model.sql.semantics.model.SQLQueryModel.resolveRelations(SQLQueryModel.java:72)
+	at org.jkiss.dbeaver.model.sql.semantics.SQLQueryModelRecognizer.recognizeQuery(SQLQueryModelRecognizer.java:154)
+	at org.jkiss.dbeaver.model.sql.semantics.SQLQueryModelRecognizer.recognizeQuery(SQLQueryModelRecognizer.java:1026)
+	at org.jkiss.dbeaver.ui.editors.sql.semantics.SQLBackgroundParsingJob.doWork(SQLBackgroundParsingJob.java:606)
+	at org.jkiss.dbeaver.ui.editors.sql.semantics.SQLBackgroundParsingJob$1.run(SQLBackgroundParsingJob.java:86)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:110)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2026-01-23 11:25:01.475 - Execution context opened (localhost; SQLEditor <Script-6.sql>; 8)
+2026-01-23 12:35:37.828 - Application goes into sleep mode
+2026-01-23 12:55:09.767 - Application wakes
+2026-01-23 13:56:42.901 - Execution context opened (localhost; SQLEditor <Script-6.sql>; 9)
+2026-01-23 14:20:14.699 - Can't parse numeric value [Q1. employees 테이블에서 사원을 사번 기준으로 오름차순 정렬하여 조회하세요.
+
+Q2. employees 테이블에서 사원을 사번 기준으로 내림차순 정렬하여 조회하세요.
+
+Q3. salaries 테이블에서 급여를 높은 순으로 정렬하여 조회하세요.
+
+Q4. employees 테이블에서 입사일 기준으로 오래된 순서대로 정렬하여 조회하세요.
+
+Q5. employees 테이블에서 성별 기준으로 정렬한 뒤 사번 기준으로 정렬하여 조회하세요.
+
+Q6. salaries 테이블에서 가장 높은 급여를 조회하세요.
+
+Q7. salaries 테이블에서 가장 낮은 급여를 조회하세요.
+
+Q8. salaries 테이블에서 평균 급여를 조회하세요.
+
+Q9. salaries 테이블에서 전체 급여 합계를 조회하세요.
+
+Q10. employees 테이블에서 전체 사원 수를 조회하세요.
+
+Q11. employees 테이블에서 성별별 사원 수를 조회하세요.
+
+Q12. dept_emp 테이블에서 부서별 사원 수를 조회하세요.
+
+Q13. titles 테이블에서 직급별 사원 수를 조회하세요.
+
+Q14. salaries 테이블에서 사번별 평균 급여를 조회하세요.
+
+Q15. employees 테이블에서 입사 연도별 사원 수를 조회하세요.
+
+Q16. 성별별 사원 수 중 100000명 이상인 경우만 조회하세요.
+
+Q17. 부서별 사원 수 중 20000명 이상인 부서만 조회하세요.
+
+Q18. 직급별 사원 수 중 50000명 이상인 직급만 조회하세요.
+
+Q19. 사번별 평균 급여가 80000 이상인 사원만 조회하세요.
+
+Q20. 입사 연도별 사원 수 중 10000명 이상인 연도만 조회하세요.] using formatter: For input string: "Q1. e"
+2026-01-23 14:20:14.701 - Can't parse numeric value [Q1. employees 테이블에서 사원을 사번 기준으로 오름차순 정렬하여 조회하세요.
+
+Q2. employees 테이블에서 사원을 사번 기준으로 내림차순 정렬하여 조회하세요.
+
+Q3. salaries 테이블에서 급여를 높은 순으로 정렬하여 조회하세요.
+
+Q4. employees 테이블에서 입사일 기준으로 오래된 순서대로 정렬하여 조회하세요.
+
+Q5. employees 테이블에서 성별 기준으로 정렬한 뒤 사번 기준으로 정렬하여 조회하세요.
+
+Q6. salaries 테이블에서 가장 높은 급여를 조회하세요.
+
+Q7. salaries 테이블에서 가장 낮은 급여를 조회하세요.
+
+Q8. salaries 테이블에서 평균 급여를 조회하세요.
+
+Q9. salaries 테이블에서 전체 급여 합계를 조회하세요.
+
+Q10. employees 테이블에서 전체 사원 수를 조회하세요.
+
+Q11. employees 테이블에서 성별별 사원 수를 조회하세요.
+
+Q12. dept_emp 테이블에서 부서별 사원 수를 조회하세요.
+
+Q13. titles 테이블에서 직급별 사원 수를 조회하세요.
+
+Q14. salaries 테이블에서 사번별 평균 급여를 조회하세요.
+
+Q15. employees 테이블에서 입사 연도별 사원 수를 조회하세요.
+
+Q16. 성별별 사원 수 중 100000명 이상인 경우만 조회하세요.
+
+Q17. 부서별 사원 수 중 20000명 이상인 부서만 조회하세요.
+
+Q18. 직급별 사원 수 중 50000명 이상인 직급만 조회하세요.
+
+Q19. 사번별 평균 급여가 80000 이상인 사원만 조회하세요.
+
+Q20. 입사 연도별 사원 수 중 10000명 이상인 연도만 조회하세요.] using formatter: For input string: "Q1. e"
+2026-01-23 14:20:14.719 - Can't parse numeric value [Q1. employees 테이블에서 사원을 사번 기준으로 오름차순 정렬하여 조회하세요.
+
+Q2. employees 테이블에서 사원을 사번 기준으로 내림차순 정렬하여 조회하세요.
+
+Q3. salaries 테이블에서 급여를 높은 순으로 정렬하여 조회하세요.
+
+Q4. employees 테이블에서 입사일 기준으로 오래된 순서대로 정렬하여 조회하세요.
+
+Q5. employees 테이블에서 성별 기준으로 정렬한 뒤 사번 기준으로 정렬하여 조회하세요.
+
+Q6. salaries 테이블에서 가장 높은 급여를 조회하세요.
+
+Q7. salaries 테이블에서 가장 낮은 급여를 조회하세요.
+
+Q8. salaries 테이블에서 평균 급여를 조회하세요.
+
+Q9. salaries 테이블에서 전체 급여 합계를 조회하세요.
+
+Q10. employees 테이블에서 전체 사원 수를 조회하세요.
+
+Q11. employees 테이블에서 성별별 사원 수를 조회하세요.
+
+Q12. dept_emp 테이블에서 부서별 사원 수를 조회하세요.
+
+Q13. titles 테이블에서 직급별 사원 수를 조회하세요.
+
+Q14. salaries 테이블에서 사번별 평균 급여를 조회하세요.
+
+Q15. employees 테이블에서 입사 연도별 사원 수를 조회하세요.
+
+Q16. 성별별 사원 수 중 100000명 이상인 경우만 조회하세요.
+
+Q17. 부서별 사원 수 중 20000명 이상인 부서만 조회하세요.
+
+Q18. 직급별 사원 수 중 50000명 이상인 직급만 조회하세요.
+
+Q19. 사번별 평균 급여가 80000 이상인 사원만 조회하세요.
+
+Q20. 입사 연도별 사원 수 중 10000명 이상인 연도만 조회하세요.] using formatter: For input string: "Q1. e"
+2026-01-23 14:20:14.737 - Can't parse numeric value [Q1. employees 테이블에서 사원을 사번 기준으로 오름차순 정렬하여 조회하세요.
+
+Q2. employees 테이블에서 사원을 사번 기준으로 내림차순 정렬하여 조회하세요.
+
+Q3. salaries 테이블에서 급여를 높은 순으로 정렬하여 조회하세요.
+
+Q4. employees 테이블에서 입사일 기준으로 오래된 순서대로 정렬하여 조회하세요.
+
+Q5. employees 테이블에서 성별 기준으로 정렬한 뒤 사번 기준으로 정렬하여 조회하세요.
+
+Q6. salaries 테이블에서 가장 높은 급여를 조회하세요.
+
+Q7. salaries 테이블에서 가장 낮은 급여를 조회하세요.
+
+Q8. salaries 테이블에서 평균 급여를 조회하세요.
+
+Q9. salaries 테이블에서 전체 급여 합계를 조회하세요.
+
+Q10. employees 테이블에서 전체 사원 수를 조회하세요.
+
+Q11. employees 테이블에서 성별별 사원 수를 조회하세요.
+
+Q12. dept_emp 테이블에서 부서별 사원 수를 조회하세요.
+
+Q13. titles 테이블에서 직급별 사원 수를 조회하세요.
+
+Q14. salaries 테이블에서 사번별 평균 급여를 조회하세요.
+
+Q15. employees 테이블에서 입사 연도별 사원 수를 조회하세요.
+
+Q16. 성별별 사원 수 중 100000명 이상인 경우만 조회하세요.
+
+Q17. 부서별 사원 수 중 20000명 이상인 부서만 조회하세요.
+
+Q18. 직급별 사원 수 중 50000명 이상인 직급만 조회하세요.
+
+Q19. 사번별 평균 급여가 80000 이상인 사원만 조회하세요.
+
+Q20. 입사 연도별 사원 수 중 10000명 이상인 연도만 조회하세요.] using formatter: For input string: "Q1. e"
+2026-01-23 14:20:14.754 - Can't parse numeric value [Q1. employees 테이블에서 사원을 사번 기준으로 오름차순 정렬하여 조회하세요.
+
+Q2. employees 테이블에서 사원을 사번 기준으로 내림차순 정렬하여 조회하세요.
+
+Q3. salaries 테이블에서 급여를 높은 순으로 정렬하여 조회하세요.
+
+Q4. employees 테이블에서 입사일 기준으로 오래된 순서대로 정렬하여 조회하세요.
+
+Q5. employees 테이블에서 성별 기준으로 정렬한 뒤 사번 기준으로 정렬하여 조회하세요.
+
+Q6. salaries 테이블에서 가장 높은 급여를 조회하세요.
+
+Q7. salaries 테이블에서 가장 낮은 급여를 조회하세요.
+
+Q8. salaries 테이블에서 평균 급여를 조회하세요.
+
+Q9. salaries 테이블에서 전체 급여 합계를 조회하세요.
+
+Q10. employees 테이블에서 전체 사원 수를 조회하세요.
+
+Q11. employees 테이블에서 성별별 사원 수를 조회하세요.
+
+Q12. dept_emp 테이블에서 부서별 사원 수를 조회하세요.
+
+Q13. titles 테이블에서 직급별 사원 수를 조회하세요.
+
+Q14. salaries 테이블에서 사번별 평균 급여를 조회하세요.
+
+Q15. employees 테이블에서 입사 연도별 사원 수를 조회하세요.
+
+Q16. 성별별 사원 수 중 100000명 이상인 경우만 조회하세요.
+
+Q17. 부서별 사원 수 중 20000명 이상인 부서만 조회하세요.
+
+Q18. 직급별 사원 수 중 50000명 이상인 직급만 조회하세요.
+
+Q19. 사번별 평균 급여가 80000 이상인 사원만 조회하세요.
+
+Q20. 입사 연도별 사원 수 중 10000명 이상인 연도만 조회하세요.] using formatter: For input string: "Q1. e"
+2026-01-23 15:33:30.786 - Execution context opened (localhost; SQLEditor <Script-7.sql>; 10)
+2026-01-23 16:47:06.011 - Execution context opened (localhost; SQLEditor <Script-8.sql>; 11)
+2026-01-23 16:47:16.080 - Execution context opened (localhost; SQLEditor <Script-9.sql>; 12)
+2026-01-23 16:47:21.209 - Delete empty SQL script '\General\Scripts\Script-9.sql'
+2026-01-23 16:47:21.226 - Execution context closed (localhost, 12)
+2026-01-23 16:50:43.596 - Execution context opened (localhost; SQLEditor <Script-8.sql>; 13)
+2026-01-23 16:51:04.914 - Execution context closed (localhost, 13)
+2026-01-23 17:09:25.606 - Execution context opened (localhost; SQLEditor <Script-8.sql>; 14)
+2026-01-23 18:22:01.496 - Execution context closed (localhost, 2)
+2026-01-23 18:22:01.537 - Execution context closed (localhost, 4)
+2026-01-23 18:22:01.553 - Execution context closed (localhost, 8)
+2026-01-23 18:22:01.567 - Execution context closed (localhost, 7)
+2026-01-23 18:22:01.597 - Execution context closed (localhost, 5)
+2026-01-23 18:22:01.629 - Execution context closed (localhost, 9)
+2026-01-23 18:22:01.665 - Execution context closed (localhost, 10)
+2026-01-23 18:22:01.680 - Execution context closed (localhost, 11)
+2026-01-23 18:22:01.729 - Execution context closed (localhost, 14)
+2026-01-23 18:22:01.839 - Dispose navigator model
+2026-01-23 18:22:01.857 - DBeaver is stopping
+2026-01-23 18:22:01.858 - Stop instance server
+2026-01-23 18:22:02.868 - Instance server has been stopped
+2026-01-23 18:22:02.868 - DBeaver shutdown completed

@@ -52,5 +52,53 @@ INSERT INTO member_pk(id) VALUES ('test');
 INSERT INTO member_pk VALUES (NULL, 'test');
 SELECT * FROM member_pk;
 
+########################################################################
+CREATE TABLE member_primary(
+	member_primary_id int AUTO_INCREMENT PRIMARY KEY,
+	id varchar(50)
+);
+
+DROP TABLE member_primary;
+
+CREATE TABLE board_foreign(
+	board_foreign_id int PRIMARY KEY AUTO_INCREMENT,
+	title varchar(300),
+	writer_id int,
+	CONSTRAINT fk_wriker FOREIGN KEY (writer_id)
+	REFERENCES member_primary(member_primary_id)
+	ON DELETE CASCADE  
+);
+
+DROP TABLE board_foreign;
+
+
+
+
+
+INSERT INTO member_primary(id)
+VALUES('test1'),
+	  ('test2'),
+	  ('test3');
+
+SELECT * FROM member_primary;
+
+INSERT INTO board_foreign(title, writer_id) VALUES('게시글 제목!!', 1);
+
+SELECT * FROM board_foreign;
+
+DELETE FROM member_primary 
+WHERE member_primary_id = 1;
+
+SELECT * FROM member_primary;
+
+
+
+
+
+
+
+
+
+
 
 

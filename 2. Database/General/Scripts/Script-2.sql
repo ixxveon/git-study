@@ -48,9 +48,3 @@ UPDATE titles SET title = 'Senior Engineer' WHERE emp_no = 1;
 DELETE FROM salaries WHERE emp_no = 10013;
 
 DELETE FROM employees WHERE emp_no = 10013;
-
-SELECT * FROM titles
-WHERE to_date IS NOT NULL;
-
-SELECT * FROM departments 
-WHERE dept_no IN ('d005','d009');
