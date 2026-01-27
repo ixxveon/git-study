@@ -1,5 +1,7 @@
 package kr.co.koreait;
 
+import java.util.Scanner;
+
 public class Ex01_Variable {
 
 	public static void main(String[] args) {
@@ -97,17 +99,81 @@ public class Ex01_Variable {
 		int iNumber = (int)lNumber; // 8byte를 강제로 4byte로 변경
 		System.out.println(iNumber);
 		
+		// --------------------------------------------------------------------
+		System.out.println("줄바꿈을 포함");
+		System.out.print("줄바꿈 없음, 줄바꿈 할거면 개행 문자: \\n \n");
+		System.out.printf("줄바꿈 없음, 변수를 서식문자 사용\n");
+		// 서식 문자: 데이터의 출력 형식을 지정하는 특수문자
+		
+		// 서식 문자의 종류
+		// 1. %b: boolean
+		// 2. %d: 정수(byte, short, int, long)
+		// 3. %o: 8진수
+		// 4. %x: 16진수
+		// 5. %f: 실수(float, double)
+		// 6. %c: 문자(char)
+		// 7. %s: 문자열(String)
+		// 8. %n: 개행 문자(줄바꿈)
+		String name = "이가연";
+		int age2 = 19;
+		String addr = "인천";
+		System.out.printf("안녕하세요. 제 이름은 %s 입니다. 나이는 %d 이고 사는곳은 %s에 살고 있습니다.\n", name, age2, addr);
+		
+		double pi_double = 3.14;
+		System.out.printf("pi_double의 값는 %.2f 입니다. \n", pi_double);
+		
+		// 이스케이프 문자: 백슬래시(\)와 문자를 조합한 문자
+		// 1. \n: 줄바꿈(개행 문자)
+		// 2. \t: 탭
+		// 3. \b: 백스페이스
+		// 4. \문자: 특수 문자를 일반 문자열로 인식해야할 때 사용
+		System.out.println("\"Hello, World!\"");
+		System.out.printf("개행 문자는 \\n 입니다.\n");
+		
+		// ---------------------------------------------------------------------
+		// Scanner Class
+		// - 사용자로부터 콘솔에 값을 입력 받는 기능을 제공하는 클래스
+		
+		// 사용 방법
+		// 1. Scanner Class 불러오기
+		//		> 파일 상단에 import java.util.Scanner;
+		// 2. 객체 생성하기
+		//		> Scanner sc = new Scanner(System.in);
+		// 3. 사용자 입력 받기 (변수에 저장)
+		//		> String choice = sc.nextLine();
+		
+		// 마우스를 빨간줄 위에 올리고 import 하는 방법
+		// 또는 Ctrl + Shift + O를 눌러서 import 하는 방법
+		Scanner sc = new Scanner(System.in);
+		
+		// 스캐너의 메서드들
+		// 1. nextInt();
+		// 2. nextFloat();
+		// 3. nextDouble();
+		// 4. next();
+		//		-> 단어를 처리할 때 사용되며 공백전까지 입력 받은 데이터를 반환
+		// 5. nextLine();
+		//		-> 문자열을 처리할 때 사용되며 \n를 기준으로 데이터를 반환
+		//		   (엔터를 입력하면 \n가 들어감)
 		
 		
+//		System.out.print("이름: ");
+//		String inputName = sc.next();
+//		
+//		System.out.println(inputName);
+//		
+//		String inputName2 = sc.next();
+//		String inputName3 = sc.next();
 		
+		System.out.print("숫자: ");
+		int inputNumber = sc.nextInt();
+		System.out.println("입력한 숫자: " + inputNumber);
 		
+		sc.nextLine();
 		
-		
-	
-		
-		
-		
-		
+		System.out.print("주소: ");
+		String inputAddr = sc.nextLine();
+		System.out.println("입력한 주소: " + inputAddr);
 		
 	}
 
