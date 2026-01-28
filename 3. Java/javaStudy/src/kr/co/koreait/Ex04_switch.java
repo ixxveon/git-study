@@ -68,7 +68,7 @@ public class Ex04_switch {
 			break;
 		case 6:
 		case 7:
-			System.out.println("주말입니다.");
+			System.out.println("주말입니다."); 
 		}
 		
 
