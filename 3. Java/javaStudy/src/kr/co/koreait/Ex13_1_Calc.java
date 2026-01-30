@@ -18,8 +18,14 @@ public class Ex13_1_Calc {
 	// 빼기 메서드 (sub)
 	// - 매개변수 3개를 받습니다.
 	// - 3개를 뺀 값을 반환합니다.
-	public int sub(int num1, int num2, int num3) {
-		return num1 - num2 - num3;
+	public int sum(int[] numbers) {
+		int resultSum = 0;
+		
+		for (int i=0; i<numbers.length; i++) {
+			resultSum += numbers[i];
+		}
+		
+		return resultSum;
 	}
 	
 	// 곱셈 메서드 (mul)
