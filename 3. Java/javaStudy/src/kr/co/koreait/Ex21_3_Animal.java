@@ -18,7 +18,7 @@ public class Ex21_3_Animal {
 		System.out.printf("%s(%d) 이(가) 먹는중입니다. \n", name, age);
 	}
 	
-//
+
 //	  - sleep 메서드
 //	    > System.out.printf("%s(%d) 이(가) 자는중입니다.") 
 //	    > 반환, 매개변수 없음
