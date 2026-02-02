@@ -49,6 +49,9 @@ public class Ex18_Field {
 		Ex18_2_Person hindoong = new Ex18_2_Person("흰둥이", 3);
 		hindoong.introduce();
 		
+		Ex18_2_Person chulsu = new Ex18_2_Person("철수");
+		chulsu.introduce();
+		
 		
 		
 		
