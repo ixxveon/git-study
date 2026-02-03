@@ -1,6 +1,6 @@
 package kr.co.koreait;
 
-import kr.co.training.Test;
+//import kr.co.training.Test;
 
 // 캡슐화
 // - 불필요한 정보를 노출시키지 않는 개념
@@ -20,7 +20,7 @@ public class Ex19_Encapsulation {
 	public static void main(String[] args) {
 		Ex19_1_Test t = new Ex19_1_Test();
 		
-		Test t2 = new Test();
+//		Test t2 = new Test();
 		
 //		t2.num1 = 10;
 		

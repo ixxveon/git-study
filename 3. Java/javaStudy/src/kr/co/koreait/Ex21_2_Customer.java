@@ -13,3 +13,4 @@ public class Ex21_2_Customer extends Ex21_2_Person {
 	}
 
 }
+

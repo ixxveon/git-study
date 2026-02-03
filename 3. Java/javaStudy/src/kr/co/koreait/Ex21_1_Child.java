@@ -3,7 +3,7 @@ package kr.co.koreait;
 public class Ex21_1_Child extends Ex21_1_Parent {
 	
 	Ex21_1_Child() {
-		super();
+		//super();
 		System.out.println("자식 생성자입니다.");
 	}
 	 

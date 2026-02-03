@@ -43,6 +43,8 @@ public class Ex20_Main {
 		member.introduce(memberInfo);
 		member.run(memberInfo);
 		
+		// =====================================================================
+		
 	}
 
 }

@@ -22,7 +22,7 @@ public class Ex21_Main {
 		cat.eat();
 		cat.sleep();
 		cat.nyangPunch();
-		
+		    
 		Ex21_3_Dog dog = new Ex21_3_Dog("두부", 2);
 		dog.eat();
 		dog.sleep();
