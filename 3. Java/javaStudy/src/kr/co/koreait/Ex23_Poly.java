@@ -16,7 +16,7 @@ public class Ex23_Poly {
 		//  Ex23_1_Parent p = child; // 클래스 타입 변환
 		
 		
-		// 클래스 타입 변환 (자식 객체를 부모 타입으로)
+		// 클래스 타입 변환 (자식 객체를 부모 타입으로): 자동
 		// - 부모 클래스에 있는 변수와 메서드만 사용 가능
 		Ex23_1_Parent p = new Ex23_1_Child();
 		p.printHello();
@@ -32,15 +32,20 @@ public class Ex23_Poly {
 		// ===========================================================
 		
 		Ex23_3_ComputerRoom cr = new Ex23_3_ComputerRoom();
-		cr.computer1 = new Ex23_3_Samsong();
-		cr.computer2 = new Ex23_3_Samsong();
-		cr.computer3 = new Ex23_3_Samsong();
+//		cr.computer1 = new Ex23_3_Samsong();
+//		cr.computer2 = new Ex23_3_Samsong();
+//		cr.computer3 = new Ex23_3_Samsong();
 		
 		cr.computer1 = new Ex23_3_LZ();
 		cr.computer2 = new Ex23_3_LZ();
 		cr.computer3 = new Ex23_3_LZ();
 		
 		cr.allPowerOn();
+		
+		Ex23_3_Computer computer = new Ex23_3_Computer();
+		Ex23_3_Samsong samsong = new Ex23_3_Samsong();
+		cr.selectPowerOn(samsong);  
+		
 		
 	}
 

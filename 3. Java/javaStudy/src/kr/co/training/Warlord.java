@@ -1,0 +1,210 @@
+package kr.co.training;
+
+public class Warlord implements Character {
+//	1. 워로드는 객체 생성 시 기본 스탯을 갖습니다.
+//    - 힘 30
+//    - 덱스 17
+//    - 지력 10
+	Warlord(CharacterAbility characterAbility) {
+		characterAbility.setStr(30);
+		characterAbility.setDex(17);
+		characterAbility.setKnowledge(10);
+	}
+	
+	
+//  2. 기본 공격 attack 메서드
+//    * 참고 : 케릭터가 먼저 공격하고, 그 다음 몬스터가 공격을 합니다.
+//               즉, 서로 한 번씩 돌아가며 공격합니다.
+	@Override
+	public void attack(CharacterAbility characterAbility, MonsterAbility monsterAbility) {
+		
+//      ------- 케릭터 공격 차례
+//      - 마력이 6 미만이라면 기본 공격 사용 불가 ("마력이 부족해 공격할 수 없습니다" 출력)
+//      - "몬스터가 OO의 피해를 입었습니다!" 출력    
+//      - 몬스터가 케릭터 힘*1.3 만큼의 체력이 깍입니다.
+//      - 케릭터의 마력 6 감소
+		characterAbility.setMp(100); 
+		if (characterAbility.getMp() < 6) {
+			System.out.println("마력이 부족해 공격할 수 없습니다.");
+		} else {
+			System.out.println("몬스터가 OO의 피해를 입었습니다!");
+			characterAbility.setHp((int) (characterAbility.getHp() - characterAbility.getStr()*1.3));
+			characterAbility.setMp(characterAbility.getMp() - 6);
+//          ------- 케릭터 공격 차례(몬스터 처치 시)
+//          - 몬스터의 체력이 0 이하라면 "몬스터 사냥을 성공하셨습니다" 출력
+//          - 케릭터의 경험치 13 증가
+			if (monsterAbility.getHp() <= 0) {
+				System.out.println("몬스터 사냥을 성공하셨습니다!");
+				characterAbility.setExperience(characterAbility.getExperience() + 13);
+			}
+//          ------- 몬스터 공격
+//      	- "몬스터가 공격했습니다!" 출력    
+//      	- "케릭터가 OO의 피해를 입었습니다!" 출력
+//      	- 몬스터 데미지 만큼 케릭터의 체력이 감소합니다.
+			else {
+				System.out.println("몬스터가 공격했습니다!");
+				System.out.println("캐릭터가 OO의 피해를 입었습니다!");
+				monsterAbility.setHp(characterAbility.getHp() - monsterAbility.getDamage());
+			}
+		}
+			
+		
+		
+		
+//    ------- 몬스터 공격(케릭터 사망 시)
+//    > 케릭터의 체력과 마력이 70으로 회복됩니다.
+//    > 경험치가 30 감소합니다.
+		if (characterAbility.getHp() == 0) {
+			characterAbility.setHp(70);
+			characterAbility.setMp(70);
+			characterAbility.setExperience(characterAbility.getExperience() - 30);
+		}
+	}
+  
+//  3. 힘 스킬 strSkill 메서드
+//    * 참고 : 케릭터가 먼저 공격하고, 그 다음 몬스터가 공격을 합니다.
+//               즉, 서로 한 번씩 돌아가며 공격합니다.
+	@Override
+	public void strSkill(CharacterAbility characterAbility, MonsterAbility monsterAbility) {
+//    ------- 케릭터 공격 차례
+//    - 마력이 15 미만이라면 스킬 사용 불가 ("마력이 부족해 스킬을 사용할 수 없습니다." 출력)
+//    - "몬스터가 힘 스킬로 인해 OO의 피해를 입었습니다!" 출력
+//    - 몬스터가 힘*1.8 만큼의 체력이 깍입니다.
+//    - 케릭터의 마력 15 감소
+		if (characterAbility.getMp() < 14) {
+			System.out.println("마력이 부족해 스킬을 사용할 수 없습니다.");
+		} else {
+			System.out.println("몬스터가 힘 스킬로 인해 OO의 피해를 입었습니다!");
+			monsterAbility.setHp((int) (monsterAbility.getHp() - characterAbility.getStr()*1.8));
+//   ------- 케릭터 공격 차례(몬스터 처치 시)
+//    - 몬스터의 체력이 0 이하라면 "몬스터 사냥을 성공하셨습니다" 출력
+//    - 케릭터의 경험치 13 증가
+			if (monsterAbility.getHp() <= 0) {
+				System.out.println("몬스터 사냥을 성공하셨습니다");
+			}
+			else {
+//    		------- 몬스터 공격
+//    		- "몬스터가 공격했습니다!" 출력    
+//    		- "케릭터가 OO의 피해를 입었습니다!" 출력
+//    		- 몬스터 데미지 만큼 케릭터의 체력이 감소합니다.
+				System.out.println("몬스터가 공격했습니다!");
+				System.out.println("캐릭터가 OO의 피해를 입었습니다!");
+				characterAbility.setHp(characterAbility.getHp() - monsterAbility.getDamage());
+			}
+		}
+//    ------- 몬스터 공격(케릭터 사망 시)
+//    > 케릭터의 체력과 마력이 70으로 회복됩니다.
+//    > 경험치가 30 감소합니다.
+		if (characterAbility.getHp() == 0) {
+			characterAbility.setHp(70);
+			characterAbility.setMp(70);
+			characterAbility.setExperience(characterAbility.getExperience() - 30);
+		}
+		
+	}
+
+
+
+
+	
+//  4. 민첩 스킬 dexSkill 메서드
+//    * 참고 : 케릭터가 먼저 공격하고, 그 다음 몬스터가 공격을 합니다.
+//               즉, 서로 한 번씩 돌아가며 공격합니다.
+	public void dexSkill(CharacterAbility characterAbility, MonsterAbility monsterAbility) {
+//      ------- 케릭터 공격 차례
+//      - 마력이 19 미만이라면 스킬 사용 불가 ("마력이 부족해 스킬을 사용할 수 없습니다." 출력)
+//      - "몬스터가 민첩 스킬로 인해 OO의 피해를 입었습니다!" 출력
+//      - 몬스터가 민첩*0.7 만큼의 체력이 깍입니다. 
+//      - "몬스터가 민첩 스킬로 인해 OO의 피해를 입었습니다!" 출력
+//      - 몬스터가 민첩*0.7 만큼의 체력이 깍입니다.
+//      - "몬스터가 민첩 스킬로 인해 OO의 피해를 입었습니다!" 출력
+//      - 몬스터가 민첩*0.7 만큼의 체력이 깍입니다. (총 3회 공격)
+//      - 케릭터의 마력 19 감소
+		if (characterAbility.getMp() < 19) {
+			System.out.println("마력이 부족해 스킬을 사용할 수 없습니다.");
+		} else {
+			for(int i=0; i<3; i++) {
+				System.out.println("몬스터가 민첩 스킬로 인해 OO의 피해를 입었습니다!");
+				monsterAbility.setHp((int) (characterAbility.getDex()*0.7));
+			}
+			characterAbility.setMp(characterAbility.getMp() - 19);
+//     ------- 케릭터 공격 차례(몬스터 처치 시)
+//     - 몬스터의 체력이 0 이하라면 "몬스터 사냥을 성공하셨습니다" 출력
+//     - 케릭터의 경험치 13 증가
+			if (monsterAbility.getHp() <= 0) {
+				System.out.println("몬스터 사냥을 성공하셨습니다!");
+				characterAbility.setExperience(characterAbility.getExperience() + 13);
+			}
+//      ------- 몬스터 공격
+//      - "몬스터가 공격했습니다!" 출력    
+//      - "케릭터가 OO의 피해를 입었습니다!" 출력
+//      - 몬스터 데미지 만큼 케릭터의 체력이 감소합니다.
+			else {
+				System.out.println("몬스터가 공격했습니다!");
+				System.out.println("케릭터가 OO의 피해를 입었습니다!");
+				characterAbility.setHp(characterAbility.getHp() - monsterAbility.getDamage());
+			}
+		}
+//      ------- 몬스터 공격(케릭터 사망 시)
+//    	> 케릭터의 체력과 마력이 70으로 회복됩니다.
+//    	> 경험치가 30 감소합니다.
+		if (characterAbility.getHp() == 0) {
+			characterAbility.setHp(70);
+			characterAbility.setMp(70);
+			characterAbility.setExperience(characterAbility.getExperience() - 30);
+		}
+		
+	}
+		
+
+
+	
+//	  5. 지력 스킬 knowledgeSkill 메서드
+//	    * 참고 : 케릭터가 먼저 공격하고, 그 다음 몬스터가 공격을 합니다.
+//	               즉, 서로 한 번씩 돌아가며 공격합니다.
+	public void knowledgeSkill(CharacterAbility characterAbility, MonsterAbility monsterAbility) {
+
+//	    ------- 케릭터 공격 차례
+//	    - 마력이 28 미만이라면 스킬 사용 불가 ("마력이 부족해 스킬을 사용할 수 없습니다." 출력)
+//	    - "몬스터가 지력 스킬로 인해 OO의 피해를 입었습니다!" 출력
+//	    - 몬스터가 지력*3.6 만큼의 체력이 깍입니다.
+//	    - 케릭터의 마력 28 감소
+		if (characterAbility.getMp() < 28) {
+			System.out.println("마력이 부족해 스킬을 사용할 수 없습니다.");
+		} else {
+			System.out.println("몬스터가 지력 스킬로 인해 OO의 피해를 입었습니다!");
+			monsterAbility.setHp((int) (monsterAbility.getHp() - characterAbility.getKnowledge()*3.6));
+			characterAbility.setMp(characterAbility.getMp() - 28);
+//	   ------- 케릭터 공격 차례(몬스터 처치 시)
+//	    - 몬스터의 체력이 0 이하라면 "몬스터 사냥을 성공하셨습니다" 출력
+//	    - 케릭터의 경험치 13 증가
+			if (monsterAbility.getHp() <= 0) {
+				System.out.println("몬스터 사냥을 성공하셨습니다");
+				characterAbility.setExperience(characterAbility.getExperience() + 13);
+			}
+//	    ------- 몬스터 공격
+//	    - "몬스터가 공격했습니다!" 출력    
+//	    - "케릭터가 OO의 피해를 입었습니다!" 출력
+//	    - 몬스터 데미지 만큼 케릭터의 체력이 감소합니다.
+			else {
+				System.out.println("몬스터가 공격했습니다!");
+				System.out.println("캐릭터가 OO의 피해를 입었습니다!");
+				characterAbility.setHp(characterAbility.getHp() -monsterAbility.getDamage());
+			}
+		}
+//	    ------- 몬스터 공격(케릭터 사망 시)
+//	    > 케릭터의 체력과 마력이 70으로 회복됩니다.
+//	    > 경험치가 30 감소합니다.
+		if (characterAbility.getHp() == 0) {
+			characterAbility.setHp(70);
+			characterAbility.setMp(70);
+			characterAbility.setExperience(characterAbility.getExperience() - 30);
+		}
+	}
+
+
+
+
+
+
+}

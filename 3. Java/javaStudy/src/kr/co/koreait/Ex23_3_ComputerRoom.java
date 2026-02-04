@@ -11,5 +11,9 @@ public class Ex23_3_ComputerRoom {
 		computer3.powerOn();
 	}
 	
+	public void selectPowerOn(Ex23_3_Computer computer) {
+		computer.powerOn();
+	}
+	
 	
 }
