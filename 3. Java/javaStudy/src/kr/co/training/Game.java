@@ -17,14 +17,6 @@ public class Game {
 		// Warlod 객체 생성
         Warlord war = new Warlord(characterAbility);
 		
-//		characterAbility.setLevel(1);
-//		characterAbility.setHp(100);
-//		characterAbility.setMp(100);
-//		characterAbility.setHpPortionCount(10);
-//		characterAbility.setMpPortionCount(10);
-		
-
-		
 		do { // 게임 시작
 			System.out.println("게임 메뉴를 선택해주세요.");
 			System.out.println("1. 사냥 시작");
@@ -40,13 +32,13 @@ public class Game {
 			System.out.println("================");
 			
 			if(menu == 1) {
-				huntMenu(); // 사냥 시작
+				huntMenu(characterAbility, war); // 사냥 시작
 			} else if(menu == 2) {
-				setPorsion(); // 인벤토리-포션
+				setPorsion(characterAbility); // 인벤토리-포션
 			} else if(menu == 3) {
-				setStatus(); // 스텟
+				setStatus(characterAbility); // 스텟
 			} else if(menu == 4) {
-				getCharInfo(); // 케릭터 정보 확인
+				getCharInfo(characterAbility); // 케릭터 정보 확인
 			} else if(menu == 0) {
 				System.out.println("게임을 종료합니다."); // 종료
 				break;
@@ -58,11 +50,9 @@ public class Game {
 	}
 	
 	// ============================================================
-	public static boolean huntMenu() {
+	public static boolean huntMenu(CharacterAbility characterAbility, Warlord warlord) {
 		// MonsterAbility 객체 생성
-		CharacterAbility characterAbility = new CharacterAbility();
 		MonsterAbility monsterAbility = new MonsterAbility();
-		Warlord warlord = new Warlord(characterAbility);
 		
 		do {
 			System.out.println("공격을 선택해주세요.");
@@ -105,8 +95,7 @@ public class Game {
 	}
 	
 	// ========================================================
-	public static boolean setPorsion() {
-		CharacterAbility characterAbility = new CharacterAbility();
+	public static boolean setPorsion(CharacterAbility characterAbility) {
 		do {
 			System.out.println("인벤토리-포션");
 			System.out.println("1. 체력 포션");
@@ -174,8 +163,7 @@ public class Game {
 	}
 	
 	// ===============================================================
-	public static boolean setStatus() {
-		CharacterAbility characterAbility = new CharacterAbility();
+	public static boolean setStatus(CharacterAbility characterAbility) {
 		// 레벨업 할때마다 스텟(unusedStatus) 5가 생김
 		// 현재 레벨 확인 후 여유분의 스텟을 추가하는 코드 작성
 		// * ability의 setter/getter를 이용
@@ -258,8 +246,7 @@ public class Game {
 		} while(true);
 	}
 	
-	public static boolean getCharInfo() {
-		CharacterAbility characterAbility = new CharacterAbility();
+	public static boolean getCharInfo(CharacterAbility characterAbility) {
 //        - 현재 가진 정보들을 전체 출력
 //			> "========케릭터 정보========"
 //        	> "체력 : OO"
@@ -272,7 +259,7 @@ public class Game {
 //        	> "사용 가능 스텟 : OO" 
 		System.out.println("========케릭터 정보========");
 		System.out.println("체력 : " + characterAbility.getHp());
-		System.out.println("마나 : ");
+		System.out.println("마나 : " +characterAbility.getMp());
 		System.out.println("힘 : " + characterAbility.getStr());
 		System.out.println("민첩 : " + characterAbility.getDex());
 		System.out.println("지력 : " + characterAbility.getKnowledge());
