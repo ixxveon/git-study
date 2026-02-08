@@ -18,4 +18,7 @@ public class Ex26_1_BookInfo {
 	public String getAuthor() {
 		return author;
 	}
+	public String toString() {
+		return "도서이름: " + getTitle() + ", 저자이름: " + getAuthor();
+	}
 }

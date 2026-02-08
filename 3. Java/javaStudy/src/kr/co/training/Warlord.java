@@ -185,8 +185,8 @@ public class Warlord implements Character {
 //	    - 몬스터 데미지 만큼 케릭터의 체력이 감소합니다.
 			
 		System.out.println("몬스터가 공격했습니다!");
-		System.out.println("캐릭터가 OO의 피해를 입었습니다!");
-		characterAbility.setHp(characterAbility.getHp() -monsterAbility.getDamage());
+		System.out.println("캐릭터가 " + monsterAbility.getDamage() + "의 피해를 입었습니다!");
+		characterAbility.setHp(characterAbility.getHp() - monsterAbility.getDamage());
 //	    ------- 몬스터 공격(케릭터 사망 시)
 //	    > 케릭터의 체력과 마력이 70으로 회복됩니다.
 //	    > 경험치가 30 감소합니다.
