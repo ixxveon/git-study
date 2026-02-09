@@ -5,8 +5,8 @@ public class MonsterAbility {
 //	- 기본값 : 5
 //	2. 체력(hp)
 //	- 기본값: 100
-	private int damage;
-	private int hp;
+	private int damage = 5;
+	private int hp = 100;
 	
 //	3. getter/setter 작성
 	public void setDamage(int damage) {

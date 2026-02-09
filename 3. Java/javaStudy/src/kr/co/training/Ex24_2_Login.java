@@ -14,7 +14,7 @@ public class Ex24_2_Login implements Ex24_2_LoginInterface{
 	public String login(String id, String pw) {
 		if(id.equals(memberId) && pw.equals(memberPwd)) {
 			return "로그인 되었습니다.";
-		} else if (id != memberId) {
+		} else if (!id.equals(memberId)) {
 			return "아이디가 틀렸습니다.";
 		} else { 
 			return "비밀번호가 틀렸습니다.";
