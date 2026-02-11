@@ -50,9 +50,10 @@ public class NoticeServiceImpl implements BoardService{
 		
 		// 2. Entity 타입을 Reponse DTO 타입으로 변경
 		List<ResBoardDTO> list = new ArrayList<>();
-		ResBoardDTO response = new ResBoardDTO();
 		
 		for(Board b : boardList) {
+			ResBoardDTO response = new ResBoardDTO();
+			
 			response.setId(b.getId());
 			response.setCategory(b.getCategory());
 			response.setTitle(b.getTitle());
