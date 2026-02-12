@@ -1,12 +1,13 @@
-package kr.co.study.board.dto;
+package kr.co.studyProject.board.dto;
 
 import java.time.LocalDateTime;
 
+import kr.co.studyProject.board.entity.Board;
+import kr.co.studyProject.user.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
 @NoArgsConstructor

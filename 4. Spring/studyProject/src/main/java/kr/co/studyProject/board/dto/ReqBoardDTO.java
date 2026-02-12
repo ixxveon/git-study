@@ -1,4 +1,4 @@
-package kr.co.study.board.dto;
+package kr.co.studyProject.board.dto;
 
 import java.time.LocalDateTime;
 
@@ -6,18 +6,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ResBoardDTO {
-	private Long id;
+// 카테고리, 제목, 내용, 파일 첨부 
+public class ReqBoardDTO {
 	private String category;
 	private String title;
 	private String content;
-	private String writerName;
-	private LocalDateTime createdAt;
-	private int viewCount;
 }
