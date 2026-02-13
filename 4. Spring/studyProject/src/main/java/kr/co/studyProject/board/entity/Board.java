@@ -16,8 +16,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -29,7 +31,7 @@ public class Board {
 	
 	private String boardType;
 	private String category;
-	private Integer viewCount;
+	private int viewCount;
 	private String title;
 	
 	@Lob
@@ -50,4 +52,7 @@ public class Board {
 	public void preUpdate() {
 		this.updatedAt = LocalDateTime.now();
 	}
+
+		
+	
 }

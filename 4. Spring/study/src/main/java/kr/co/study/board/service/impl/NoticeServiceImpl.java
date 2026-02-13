@@ -122,5 +122,58 @@ public class NoticeServiceImpl implements BoardService{
    		
    		
 	}
-
+	
+	@Override
+	@Transactional
+	public ResBoardDTO getBoardDetailEdit(Long id) {
+		
+		// 1. 게시글 조회
+		Board board = boardRepository.findById(id).orElse(null);
+		
+		// 2. 응답 DTO 변환
+   		ResBoardDTO response = ResBoardDTO.builder()
+   							   .id(board.getId())
+   							   .title(board.getTitle())
+   							   .content(board.getContent())
+   							   .writerName(board.getWriter().getUserName())
+   							   .createdAt(board.getCreatedAt())
+   							   .viewCount(board.getViewCount())
+   							   .build();
+   		
+   		return response; 
+   		
+	}
+	
+	@Override
+	@Transactional
+	public void edit(ReqBoardDTO request, Long id) {
+		
+		// 1. 기존 게시글이 존재하는지 조회
+		Board board = boardRepository.findById(request.getId()).orElse(null);
+		
+		if(board != null && !board.getWriter().getId().equals(id)) {
+			System.out.println("게시글이 없거나 적상자가 아닙니다.");
+		}
+		
+		// 2. 게시글 수정 반영
+		board.setCategory(request.getCategory());
+		board.setTitle(request.getTitle());
+		board.setContent(request.getContent());
+	}
+	
+	@Override
+	public void delete(Long id, Long loginUserId) {
+		// 1. id로 게시글 조회
+		Board board = boardRepository.findById(id).orElse(null);
+		
+		// 2. 해당하는 게시글이 존재하는지 확인 및 작성자 검증
+		if(board == null) {
+			System.out.println("삭제할 수 없습니다.");
+		} else if(!board.getWriter().getId().equals(loginUserId)) {
+			System.out.println("삭제 권한이 없습니다.");
+		}
+		
+		// 3. 삭제 처리
+		boardRepository.delete(board);
+	}
 }

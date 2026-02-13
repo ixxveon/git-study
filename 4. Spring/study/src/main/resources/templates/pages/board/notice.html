@@ -19,7 +19,7 @@
          
         <div class="post-list" id="announcementList">
             <div class="post-item" th:each="notice : ${list}"
-            th:onclick="|location.href='/board/notice/datail?id=' + ${notice.id}|">
+            th:onclick="|location.href='/board/notice/detail?id=' + ${notice.id}|">
                 <div class="post-header">
                     <div>
                         <div class="post-title" th:text="${notice.title}"></div>
