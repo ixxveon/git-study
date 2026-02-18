@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<!-- ===== Header ===== -->
-<div th:replace="fragments/header :: header"></div>
+  <!-- ===== Header ===== -->
+  <div th:replace="fragments/header :: header"></div>
 
   <!-- ===== Main ===== -->
   <main class="main main--narrow">
@@ -21,14 +21,14 @@
       </div>
 
       <!-- 회원가입 폼 -->
-      <form action="/user/signup" method = "POST">
+      <form action="/user/signup" method="POST">
 
         <div class="form-group">
           <label for="name">이름</label>
           <input
             type="text"
-            name="userName"
             id="name"
+			name="userName"
             class="form-input"
             placeholder="홍길동"
             required
@@ -40,8 +40,8 @@
           <label for="email">이메일</label>
           <input
             type="email"
-            name="email"
             id="email"
+			name="email"
             class="form-input"
             placeholder="example@email.com"
             required
@@ -54,8 +54,8 @@
           <label for="nickname">닉네임</label>
           <input
             type="text"
-            name="userNickname"
             id="nickname"
+			name="nickname"
             class="form-input"
             placeholder="사용할 닉네임을 입력하세요"
             required
@@ -67,8 +67,8 @@
           <label for="password">비밀번호</label>
           <input
             type="password"
-            name="password"
             id="password"
+			name="password"
             class="form-input"
             placeholder="8자 이상 입력하세요"
             required
@@ -81,8 +81,8 @@
           <label for="passwordConfirm">비밀번호 확인</label>
           <input
             type="password"
-            name="passwordCheck"
             id="passwordConfirm"
+			name="passwordCheck"
             class="form-input"
             placeholder="비밀번호를 다시 입력하세요"
             required
@@ -95,8 +95,8 @@
           <label for="phone">전화번호 (선택)</label>
           <input
             type="tel"
-            name="phoneNumber"
             id="phone"
+			name="phoneNumber"
             class="form-input"
             placeholder="010-1234-5678"
           >

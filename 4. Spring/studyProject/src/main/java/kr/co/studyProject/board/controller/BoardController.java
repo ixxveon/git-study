@@ -47,12 +47,12 @@ public class BoardController {
 		
 		return "board";
 	}
-	@GetMapping("/detail")
-	public String detatil(@RequestParam(name="id") Long id, Model model) {
-		ResBoardDTO response = boardService.getBoardDetail(id);
-		model.addAttribute("board", response);
-		return "board-view";
-	}
+//	@GetMapping("/detail")
+//	public String detatil(@RequestParam(name="id") Long id, Model model) {
+//		ResBoardDTO response = boardService.getBoardDetail(id);
+//		model.addAttribute("board", response);
+//		return "board-view";
+//	}
 	
 	@GetMapping("/create/form")
 	public String createForm() {

@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<!-- ===== Header ===== -->
-<div th:replace="fragments/header :: header"></div>
+  <!-- ===== Header ===== -->
+  <div th:replace="fragments/header :: header"></div>
 
 
   <!-- ===== Main ===== -->
@@ -29,8 +29,9 @@
 
     <!-- Board Top Bar -->
     <div class="board-topbar">
-      <span class="info" th:text="${'총 ' + list.totalElements + '개의 게시글'}"></span>
-      <a href="/board/notice/create/form" class="btn btn-primary btn-sm">
+      <span class="info"> 
+		총 <strong th:text="${page.totalElements}"></strong>개의 게시글</span>
+      <a href="/board/write/form" class="btn btn-primary btn-sm">
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         새 글 작성
       </a>
@@ -49,29 +50,45 @@
           </tr>
         </thead>
         <tbody>
-          <tr th:each="board : ${list}">
-            <td class="col-no">8</td>
+          <tr th:each="b, stat : ${page.content}">
+            <td class="col-no" th:text="${page.totalElements - (page.number * page.size) - stat.index}"></td>
             <td class="col-title">
-              <a href="board-view.html" th:text="${board.title}" 
-              th:onclick="|location.href='/board/notice/detail?id=' + ${board.id}|"></a>
+              <a th:href="@{/board/{id}(id=${b.id})}"
+				 th:text="${b.title}"></a>
               <span class="badge badge-primary" style="margin-left: 0.5rem;">NEW</span>
             </td>
-            <td class="col-author" th:text="${board.writerName}"></td>
-            <td class="col-date" th:text="${#temporals.format(board.createdAt, 'yyyy.MM.dd')}"></td>
-            <td class="col-views" th:text="${board.viewCount}"></td>
+            <td class="col-author" th:text="${b.writer.nickname}"></td> 
+            <td class="col-date" th:text="${#temporals.format(b.createdAt, 'yyyy-MM-dd')}"></td>
+            <td class="col-views" th:text="${b.viewCount}"></td>
           </tr>
-          
+         
         </tbody>
       </table>
     </div>
 
     <!-- Pagination -->
     <nav class="pagination" aria-label="페이지 이동">
-      <a href="#" class="disabled" aria-label="이전 페이지">&laquo;</a>
-      <span class="active">1</span>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#" aria-label="다음 페이지">&raquo;</a>
+		
+	  <!-- 이전 -->
+      <a th:if="${currentPage > 1}"
+		 th:href="@{/board(page=${currentPage-2}, keyword=${keyword})}" class="disabled" 
+		 aria-label="이전 페이지">&laquo;</a>
+	  <span th:if="${currentPage == 1}" class="disabled">&laquo;</span>
+		 
+	  <!-- 페이지 번호-->
+	  <th:block th:each="p : ${#numbers.sequence(startPage, endPage)}">
+      	<span th:if="${p == currentPage}" class="active" th:text="${p}"></span>
+	  	<a th:if="${p != currentPage}"
+	     	th:href="@{/board(page=${p-1}, keyword=${keyword})}"
+	     	th:text="${p}"></a>
+	  </th:block> 
+	  
+	  <!-- 다음 -->
+	  <a th:if="${currentPage < page.totalPages}"
+		 th:href="@{/board(page=${currentPage}, keyword=${keyword})}"
+		 aria-label="다음 페이지">&raquo;</a>
+
+	  <span th:if="${currentPage >= page.totalPages}" class="disabled">&raquo;</span>
     </nav>
 
   </main>
