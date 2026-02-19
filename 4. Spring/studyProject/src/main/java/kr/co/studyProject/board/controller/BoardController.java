@@ -47,26 +47,34 @@ public class BoardController {
 		
 		return "board";
 	}
+	
+	// id를 조회해서 게시물 찾은 다음 수정
 //	@GetMapping("/detail")
-//	public String detatil(@RequestParam(name="id") Long id, Model model) {
-//		ResBoardDTO response = boardService.getBoardDetail(id);
-//		model.addAttribute("board", response);
-//		return "board-view";
+//	public String detail(@RequestParam(name="id") Long id, Model model) {
+//		// 1. 로그인한 유저인지?? (이건 여기서 처리)
+		// 2. writer <-> board 매치해서 게시글 조회 
+		// ResBoardDTO response = boardService.getDetail(); // detail()에서 repo의 db와 접근해서 게시글 가져와야되지 않을까??
+		// 3. return
 //	}
 	
+	// 글쓰기 화면
 	@GetMapping("/create/form")
 	public String createForm() {
 		return "board-write";
 	}
 	
-	@PostMapping("/create")
+	// 글쓰기 
+	@PostMapping("/create") // 글쓰기dto 요청
 	public String create(ReqBoardDTO request, HttpSession session) {
+		// 세션이 있는 유저인지 확인
 		ResLoginDTO loginUser = (ResLoginDTO) session.getAttribute("LOGIN_USER");
 		
+		// 세션이 없으면 로그인 화면으로
 		if (loginUser == null) {
 			return "redirect:/user/login/form";
 		}
 		
+		// 확인 끝났으면 boardService의 write()실행
 		boardService.write(request, loginUser.getId());
 		
 		return "redirect:/board/notice";
