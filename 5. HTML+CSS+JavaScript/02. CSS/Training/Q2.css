@@ -1,0 +1,44 @@
+body {
+            margin: 10px;
+            background-color: #f5f8fd;
+            color: #222;
+        }
+
+.box1 {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-left: 5px;
+    height: 150px;
+    border: 1px solid rgb(202, 202, 202);
+    background-color: #ffffff;
+}
+
+.box1-inner {
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+}
+
+
+h5 {
+    display: inline;
+}
+
+.level-1 {
+    color:#00a035;
+    font-weight: bold;
+}
+.level-2 {
+    color:#ffc814;
+    font-weight: bold;
+}
+.level-3 {
+    color:#ff0000;
+    font-weight: bold;
+}
+
+a {
+    font-size: small;
+    font-weight: bold;
+    color:#4567ff;
+}

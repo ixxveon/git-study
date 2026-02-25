@@ -1,0 +1,32 @@
+.h {
+    font-weight: bold;
+}
+
+.linked {
+    cursor: wait;
+}
+
+table {
+    text-align: center;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: powderblue;
+}
+
+tbody {
+    background-color: aliceblue;
+}
+
+.text-red { 
+    color: red;
+}
+
+.text-blue {
+    color: blue;
+}
+
+.bold {
+    font-weight: bold;
+}
