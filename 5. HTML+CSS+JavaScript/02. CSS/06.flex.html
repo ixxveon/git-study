@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container {
+        /* .container {
             width: 100%;
             height: 300px;
             display: flex;
             flex-direction: row;
-            /* justify-content: space-between; */
+            justify-content: space-between;
             align-items: center;
         }
 
@@ -20,7 +20,35 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        } */
+
+        .container {
+            display: flex;
         }
+
+        .flex-item {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 5px;
+        }
+
+        .item1 {
+            /* flex-basis: 300px; */
+            /* 줄어드는 속도 */
+            flex-shrink: 5; 
+            /* 남는 공간을 어떻게 분배할건지 */
+            flex-grow: 1;
+        }
+
+        .item2 {
+            /* flex-basis: 300px; */
+            flex-shrink: 3;
+            flex-grow: 2;
+        }
+
+        .item3 {
+            flex-grow: 2;
+        } 
     </style>
 </head>
 <body>
@@ -29,8 +57,15 @@
         <div class="sidebar">Sidebar</div>
         <div class="content">Content</div>
     </div> -->
-    <main>
+
+    <!-- <main>
         <div>로그인</div>
-    </main>
+    </main> -->
+
+    <div class="container">
+        <div class="flex-item item1">item1</div>
+        <div class="flex-item item2">item2</div>
+        <div class="flex-item item3">item3</div>
+    </div>
 </body>
 </html>

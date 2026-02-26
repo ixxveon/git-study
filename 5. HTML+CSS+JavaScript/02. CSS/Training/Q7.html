@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: #111;
+            justify-content: space-between; /* 로고 왼쪽, 메뉴 오른쪽 */
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom-width: 10px;
+            padding-bottom: 20px;
+
+            /* border-radius: 10px;  */
+
+        }
+
+        
+        .logo {
+            margin-right: 300px;
+            color: white;
+            
+        }
+
+        .main-menu {
+            display: flex;
+            gap: 30px; /* 메뉴 사이 간격 */
+            list-style: none;
+        }
+
+        .main-menu > li {
+             position: relative;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Card 디자인 */
+        .container {
+            display: flex;
+            height: 100px;
+            /* flex 안에 있는 아이템들간의 간격 */
+            gap: 20px;
+            /* 줄바꿈 여부 (nowrap은 줄바꿈 안함, wrap은 줄바꿈) */
+            flex-wrap: wrap;
+            margin: 30px 40px;
+        }
+
+        .card {
+            display: flex;
+            padding: 25px;
+            border-radius: 10px;
+            flex-grow: 1;
+            flex-shrink: 1;
+            /* 25%에서 20px을 뺀 만큼만 크기를 가짐 */
+            flex-basis: calc(20% - 20px);
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        .title {
+            color: #555;
+            font-weight: 700;
+            padding: 20px;
+            margin: 5px;
+            display: block;
+            text-align: center;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">MyCompany</div>
+        <ul class="main-menu">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Service</a>
+                <a href="">Contact</a>    
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <p class="title">Service1</p>
+        </div>
+        <div class="card">
+            <p class="title">Service2</p>
+        </div>
+        <div class="card">
+            <p class="title">Service3</p>
+        </div>
+        <div class="card">
+            <p class="title">Service4</p>
+        </div>
+         <div class="card">
+            <p class="title">Service5</p>
+        </div>
+         <div class="card">
+            <p class="title">Service5</p>
+        </div>
+    </div>
+</body>
+</html>

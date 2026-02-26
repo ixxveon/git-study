@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            font-size: small;
+            padding: 10px;
+        }
+
+
+
+        a {
+            text-decoration: none;
+            color: #444;
+           
+        }
+
+        .left-menu {
+            display: flex;
+            gap: 10px; /* 메뉴 사이 간격 */
+        }
+
+        .left-menu > a:hover {
+            color: #111;
+        }
+
+        .right-menu {
+            color: #444;
+        }
+
+        .info {
+             display: flex;
+             flex-direction: row;
+        }
+
+        .info-inner1 {
+            flex: 1;
+        }
+
+        .info-inner2 {
+            margin-right: 300px;
+        }
+
+        span {
+            color: #777;
+        }
+
+        .text-blue {
+            color: blue;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        p {
+            font-size: small;
+        }
+
+        .t {
+            color:#111;
+            font-weight: 1000;
+        }
+
+        
+
+        button {
+            height: 30px;
+            border-radius: 15px;
+            color: #777;
+            border: 0px;
+        }
+
+        .foot {
+            display: flex;
+            color:#777;
+        }
+
+        .footer-left {
+            flex:1; 
+        }
+
+        .hh {
+           font-weight: 1000;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <li class="left-menu">
+            <a href="">서비스 소개</a> |
+            <a href="">채용 정보</a> |
+            <a href="">이용약관</a> |
+            <a href="">개인정보처리방침</a> |
+            <a href="">청소년보호정책</a> |
+            <a href="">전자금융거래약관</a> |
+            <a href="">제휴 광고</a>
+        </li>
+        <div class="right-menu">
+            패밀리 사이트
+            <select class="selectbox">
+                <option>선택하세요</option>
+            </select>
+        </div>
+    </nav>
+    <hr>
+    <div class="info">
+        <div class="info-inner1">
+            <h4>하루 드림</h4>
+            <p><span>주소 :</span>서울특별시 송파구 가락로 84, 7층 705-Q091호(석촌동, 서원빌딩)</p>
+            <p><span>대표 :</span>김재섭</p>
+            <p><span>사업자등록번호 :</span>306-36-08063 <span class="text-blue">사업자정보확인</span></p>
+            <button>사업자정보 확인</button>
+            <button>통신판매업 신고</button>
+            <button>개인정보 보호책임자</button>
+        </div>
+        <div class="info-inner2">
+            <h4>고객센터</h4>
+            <P><span class="t">Tel : </span>1500-0000</P>
+            <P><span class="t">Fax : </span>02-000-0000</P>
+            <P><span class="t">Mail : </span>help@harodream.com</P>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="foot">
+        <div class="footer-left">
+            <p>하루드림은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 하루드림은 상품 거래 정보 및 가격에 대해 책임을 지지 않습니다. </p>
+            <p>본 사이트의 모든 정보, 콘텐츠, UI 등에 대한 무단 복제 전송 배포 스크래핑 행위는 금지됩니다. <span class="underline">콘텐츠산업 진흥법에 따른 표시</span></p> 
+            <p>Copyright ⓒ HatuDream Inc. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+            <span class="hh">HaruDream</span>
+            <p>UI Clone pPractice</p>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
