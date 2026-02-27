@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            background-color: #87CEEB;
+        }
+
+        .ballbox {
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            margin-left: 50%;
+        }
+
+        .balls {
+            width: 20px;
+            height: 20px;
+            background-color: #4682B4;
+            border-radius: 100px;
+            animation: circle 5s infinite;
+        }
+
+        @keyframes circle {
+            0% {
+                margin: 10px;
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                margin: 5px;
+                transform: scale(3);
+                opacity: 0;
+            }
+            100% {
+                margin: 10px;
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="ballbox">
+        <div class="balls ball-1"></div>
+        <div class="balls ball-2"></div>
+        <div class="balls ball-3"></div>
+        <div class="balls ball-4"></div>
+        <div class="balls ball-5"></div>
+    </div>
+</body>
+</html>

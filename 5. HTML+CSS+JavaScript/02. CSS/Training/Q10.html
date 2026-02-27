@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            background-color: #007bff;
+         }
+        .ball {
+            margin-top: 50%;
+            margin-bottom: 0px;
+            margin-left: 50%;
+            width: 100px;
+            height: 100px;
+            background-color: #ffffff;
+            border-radius: 100px;
+            animation: trans 4s infinite;
+
+        }
+
+        @keyframes trans {
+            0% {
+                transform: translate(0);
+            }
+            
+            50% {
+                transform: translateY(300px);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+</body>
+</html>

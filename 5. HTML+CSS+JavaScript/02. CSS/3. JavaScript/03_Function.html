@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onClick="add(10, 10)">10 + 10</button>
+    <script>
+        function add(num1, num2) {
+            alert(num1 + num2);
+        }
+
+
+    </script>
+    <hr>
+    <button onClick="Q1()">Q1</button>
+    <hr>
+    <!-- 국어, 영어, 수학 점수를 입력받아 평균을 계산하여 출력하세요. -->
+    <button onClick="Q2()">Q2</button>
+    <hr>
+
+    <!-- 나이를 입력받아 19세 이상이면 "성인" 19세 미만이면 "미성년자"를 출력하세요. -->
+    <button onClick="Q3()">Q3</button>
+    <hr>
+
+    <!-- 두 개의 숫자를 입력받아 더 큰 숫자를 출력하세요. -->
+    <button onClick="Q4()">Q4</button>
+    <hr>
+
+    <!-- 숫자 1개를 입력받아 짝수인지 홀수인지 출력하세요. -->
+    <button onClick="Q5()">Q5</button>
+    <hr>
+
+    <!-- 사용자가 입력한 구구단을 출력하세요. (ex. 2 입력하면 2단 출력) -->
+    <button onClick="Q6()">Q6</button>
+    <hr>
+
+    <!-- 숫자 1개를 입력받아 1부터 N까지의 합을 계산하고 출력하세요. -->
+    <button onClick="Q7()">Q7</button>
+    <hr>
+
+    <!-- 
+        사용자로부터 이름을 입력받아 Alice일 경우 "다시 돌아오신걸 환영합니다" 출력
+        bob일 경우 "안녕히가세요!" 출력
+        그 외에는 "[이름]님 어서오세요!" 출력
+    -->
+    <button onClick="Q8()">Q8</button>
+
+    <!-- 
+        1. 사용자 입력 받는 건 prompt() 사용
+        2. 버튼 클릭하면 함수 호출
+            ex) onClick="Q1()""
+    -->
+
+    <script>
+        function Q1() {
+            let birthYear = parseInt(prompt("출생연도 입력: "));
+            let age = 2026 - birthYear;
+
+            alert("당신의 나이는 " + age + "세 입니다.");
+        }
+        function Q2() {
+            let sub1 = parseInt(prompt("국어 점수: "));
+            let sub2 = parseInt(prompt("영어 점수: "));
+            let sub3 = parseInt(prompt("수학 점수: "));
+            let avg = (sub1 + sub2 + sub3) / 3;
+
+            alert("과목 평균은: " + avg + "입니다.");
+        }
+        function Q3() {
+            let age = parseInt(prompt("나이 입력: "));
+
+            if (age>=19) {
+                alert("성인");
+            } else {
+                alert("미성년자");
+            }
+        }
+        function Q4() {
+            let num1 = parseInt(prompt("숫자1: "));
+            let num2 = parseInt(prompt("숫자2: "));
+            
+            if(num1>num2) {
+                alert(num1);
+            } else {
+                alert(num2);
+            }
+        }
+        function Q5() {
+            let num1 = parseInt(prompt("숫자 입력(홀/짝): "));
+            
+            if(num1%2===0) {
+                alert("짝수");
+            } else {
+                alert("홀수");
+            }
+        }
+        function Q6() {
+            let gugudan = parseInt(prompt("구구단 입력: "));
+
+            for(let i=1; i<10; i++) {
+                alert(gugudan + " * " + i + " = " + (gugudan*i));
+            }
+
+        }
+        function Q7() {
+            let num = parseInt(prompt("숫자 입력 (합계): "));
+            let sum = 0;
+            for(let i=1; i<=num; i++) {
+                sum += i;
+            }
+            alert("숫자 합은: " + sum);
+        }
+        function Q8() {
+            let name = prompt("이름 입력: ");
+            if(name==="Alice") {
+                alert("다시 돌아오신걸 환영합니다.");
+            } else if(name==="bob") {
+                alert("안녕히가세요!");
+            } else {
+                alert(name + "님 어서오세요!");
+            }
+        }
+    </script>
+    <!-- <script>
+        function calc() {
+            let num1 = parseInt(prompt("첫 번째 숫자 입력: "));
+            let num2 = parseInt(prompt("두 번째 숫자 입력: "));
+            let operation = prompt("원하는 연산 입력(+, -, *, /) : ");
+            let result;
+
+            switch(operation) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    if(num1 !== 0 && num2 !== 0) {
+                        result = num1 / num2;
+                    }
+                    break;
+                default:
+                    console.log("잘못된 연산입니다.");
+               
+            }
+
+            console.log("계산된 결과는 " + result + "입니다.");
+        }
+
+        calc();
+    </script> -->
+</body>
+</html>
