@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Practice</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>문제1</legend>
+        <h4>div 태그의 배경색을 빨간색으로 변경하세요.</h4>
+        <div id="my-div">이 div의 배경색을 변경하세요.</div>
+        <button onclick="changeBackgroundColor()">배경색 변경</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>문제2</legend>
+        <h4>이미지를 클릭하면 이미지의 크기가 2배로 확대되도록 작성하세요.</h4>
+        <img id="my-image" src="https://picsum.photos/200/150" width="200" height="150" onclick="zoomImage()">
+    </fieldset>
+
+    <fieldset>
+        <legend>문제3</legend>
+        <h4>input에 입력한 값을 todo 리스트에 추가하세요.</h4>
+        <input type="text" id="todo-input" placeholder="할 일을 입력하세요">
+        <button onclick="addTodo()">추가</button>
+        <ul id="todo-list">
+
+        </ul>
+    </fieldset>
+
+    <fieldset>
+        <legend>문제4</legend>
+        <h4>버튼을 클릭하면 p태그의 배경색을 변경하세요.</h4>
+        <p id="color-text">이 문단의 배경색을 변경하세요.</p>
+        <button id="btn-1">빨간색 배경</button>
+        <button id="btn-3">아쿠아색 배경</button>
+        <button id="btn-2">노란색 배경</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>문제5</legend>
+        <h4>입력값에 따라 링크를 생성하세요.</h4>
+        <p style="margin:0px">네이버 https://www.naver.com</p>
+        <p style="margin:0px">다음 https://www.daum.net</p>
+        <p style="margin:0px; margin-bottom: 20px;">구글 https://www.google.com</p>
+        <input type="text" id="link-input" placeholder="네이버 / 다음 / 구글">
+        <button onclick="addLink()">링크 추가</button>
+        <ul id="link-list">
+
+        </ul>
+    </fieldset>
+
+    <script>
+        function changeBackgroundColor() {
+            let myDiv = document.getElementById('my-div');
+            myDiv.style.backgroundColor = 'red';
+        }
+
+        function zoomImage() {
+            let myImage = document.getElementById('my-image');
+            myImage.style.width = '400px';
+            myImage.style.height = '300px';
+        }
+
+        function addTodo() {
+            let todoInput = document.getElementById('todo-input').value;
+            let todoList = document.getElementById('todo-list');
+
+            let todo = document.createElement("li");
+            
+            todo.textContent = todoInput;
+
+            todoList.appendChild(todo);
+
+        }
+
+        let btn_1 = document.getElementById('btn-1');
+        let btn_2 = document.getElementById('btn-2');
+        let btn_3 = document.getElementById('btn-3');
+        let colorText = document.getElementById('color-text');
+
+        btn_1.addEventListener('click', function() {
+            colorText.style.backgroundColor = 'red';  
+        })
+
+        btn_2.addEventListener('click', function() {
+            colorText.style.backgroundColor = 'yellow';  
+        })
+
+        btn_3.addEventListener('click', function() {
+            colorText.style.backgroundColor = 'aquamarine';  
+        })
+
+
+        function addLink() {
+            let linkInput = document.getElementById('link-input');
+            let linkList = document.getElementById('link-list'); // ul태그
+            
+
+            // 태그 생성
+            let todoItem = document.createElement('li');
+            let link = document.createElement('a'); // <a></a>
+
+            link.textContent = linkInput.value;
+
+            if(linkInput.value === '네이버') {
+                link.href = "https://www.naver.com";
+            } else if(linkInput.value === '다음') {
+                link.href = "https://www.daum.net";
+            } else if(linkInput.value === '구글') {
+                link.href = "https://www.google.com";
+            }
+
+            todoItem.appendChild(link);
+            linkList.appendChild(todoItem);
+            
+            
+
+        }
+        
+    </script>
+    
+</body>
+</html>

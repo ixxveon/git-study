@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>문제1</legend>
+        <h4>문자열을 입력받아 문자열의 길이를 div에 출력하세요.</h4>
+        <input type="text" id="q1-str">
+        <button onclick="Q1()">출력</button>
+        <div id="q1-result"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>문제2</legend>
+        <h4>세 개의 숫자를 입력받아 합을 div에 출력하세요.</h4>
+        <input type="number" id="q2-number-1">
+        <input type="number" id="q2-number-2">
+        <input type="number" id="q2-number-3">
+        <button onclick="Q2()">출력</button>
+        <div id="q2-result"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>문제3</legend>
+        <h4>두 개의 숫자를 입력받아 더 작은 숫자를 div에 출력하세요.</h4>
+        <input type="number" id="q3-number-1">
+        <input type="number" id="q3-number-2">
+        <button onclick="Q3()">출력</button>
+        <div id="q3-result"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>문제4</legend>
+        <h4>문자열을 입력받아 모두 대문자로 변환하여 div에 출력하세요.</h4>
+        <input type="text" id="q4-str">
+        <button onclick="Q4()">출력</button>
+        <div id="q4-result"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>문제5</legend>
+        <h4>두 숫자를 입력받아 두 숫자의 차이를 div에 출력하세요.</h4>
+        <input type="number" id="q5-number-1">
+        <input type="number" id="q5-number-2">
+        <button onclick="Q5()">출력</button>
+        <div id="q5-result"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>문제6</legend>
+        <h4>숫자를 입력받아 양수, 음수, 0인지 판별하여 alert으로 출력하세요.</h4>
+        <input type="number" id="q6-number">
+        <button onclick="Q6()">판별</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>문제7</legend>
+        <h4>숫자(소수점 포함)를 입력받아 올림 계산하여 div에 출력하세요.</h4>
+        <h6>힌트 : Math 관련 메서드를 확인해보세요.</h6>
+        <input type="number" id="q7-number">
+        <button onclick="Q7()">출력</button>
+        <div id="q7-result"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>문제8</legend>
+        <h4>세 개의 숫자를 입력받아 가장 큰 숫자를 alert으로 출력하세요.</h4>
+        <input type="number" id="q8-number-1">
+        <input type="number" id="q8-number-2">
+        <input type="number" id="q8-number-3">
+        <button onclick="Q8()">출력</button>
+    </fieldset>
+
+    <script>
+        
+        function Q1() {
+            let q1Str = document.getElementById('q1-str').value;
+            let q1Result = document.getElementById('q1-result');
+            
+            q1Result.textContent = q1Str.length;
+        }
+
+        function Q2() {
+            let q2Number_1 = parseInt(document.getElementById('q2-number-1').value);
+            let q2Number_2 = parseInt(document.getElementById('q2-number-2').value);
+            let q2Number_3 = parseInt(document.getElementById('q2-number-3').value);
+            let q2Result = document.getElementById('q2-result');
+
+            q2Result.textContent = q2Number_1 + q2Number_2 + q2Number_3;
+        }
+
+        function Q3() {
+            let q3Number_1 = parseInt(document.getElementById('q3-number-1').value);
+            let q3Number_2 = parseInt(document.getElementById('q3-number-2').value);
+            let q3Result = document.getElementById('q3-result');
+
+            if (q3Number_1 > q3Number_2) {
+                q3Result.textContent = q3Number_2;
+            } else {
+                q3Result.textContent = q3Number_1;
+            }
+        }
+
+        function Q4() {
+            let q4Str = document.getElementById('q4-str').value;
+            let q4Result = document.getElementById('q4-result');
+
+            q4Result.textContent = q4Str.toUpperCase();
+        }
+
+        function Q5() {
+            let q5Number_1 = parseInt(document.getElementById('q5-number-1').value);
+            let q5Number_2 = parseInt(document.getElementById('q5-number-2').value);
+            let q5Result = document.getElementById('q5-result');
+
+            q5Result.textContent = Math.abs(q5Number_1 - q5Number_2);
+        }
+
+        function Q6() {
+            let q6Number = parseInt(document.getElementById('q6-number').value);
+            
+            if(q6Number > 0) {
+                alert("양수입니다.");
+            } else if (q6Number === 0) {
+                alert("0입니다.");
+            } else {
+                alert("음수입니다.");
+            }
+        }
+
+        function Q7() {
+            let q7Number = parseFloat(document.getElementById('q7-number').value);
+            let q7Result = document.getElementById('q7-result');
+
+            q7Result.textContent =  Math.ceil(q7Number);
+        }
+
+        function Q8() {
+            let q8Number_1 = parseInt(document.getElementById('q8-number-1').value);
+            let q8Number_2 = parseInt(document.getElementById('q8-number-2').value);
+            let q8Number_3 = parseInt(document.getElementById('q8-number-3').value);
+
+            // a랑 b 비교 a가 크면 c랑 비교 // b가 크면 c랑 비교 //
+            if(q8Number_1 > q8Number_2) {
+                if(q8Number_1 > q8Number_3) {
+                    alert(q8Number_1);
+                } else {
+                    alert(q8Number_3);
+                } 
+            } else {
+                alert(q8Number_2);
+            }
+                
+        }
+    </script>
+</body>
+
+</html>
