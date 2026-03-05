@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 실습용 대시보드</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./05_regex.css">
+</head>
+<body>
+    <section class="login-section">
+        <h2>로그인</h2>
+        <div class="form-group">
+            <label>아이디</label>
+            <input type="text" id="login-id" placeholder="user 입력">
+        </div>
+        <div class="form-group">
+            <label>비밀번호</label>
+            <input type="password" id="login-pw" placeholder="qwer1234! 입력">
+        </div>
+        <button id="btn-login" onclick="validateLogin()">로그인</button>
+    </section>
+    <script>
+        //     <로그인>
+        //      * 공통 : 비어있는 문자 불가(로그인 버튼 클릭 시)
+        //      * const id = "user";   /  const pwd = "qwer1234!"
+        //          - 아이디 또는 비밀번호를 입력하지 않을 경우 : alert "아이디 또는 비밀번호를 입력해주세요." 출력 
+        //          - 아이디 또는 비밀번호가 일치하지 않을 경우 : alert "아이디 또는 비밀번호가 틀렸습니다." 출력
+        //          - 위의 변수와 모두 일치 할 경우 : alert "로그인 되었습니다." 출력 
+        function validateLogin() {
+            const loginId = document.getElementById('login-id').value;
+            const loginPw = document.getElementById('login-pw').value;
+            
+            if(loginId === "" || loginPw === "") {
+                alert("아이디 또는 비밀번호를 입력해주세요.");
+            } else if(loginId !== "user" || loginPw !== "qwer1234!") {
+                alert("아이디 또는 비밀번호가 틀렸습니다.");
+            } else {
+                alert("로그인 되었습니다.");
+            }
+
+        }
+    </script>
+
+
+    <section class="portfolio-section">
+        <h2>포트폴리오 추가</h2>
+        <div class="form-group">
+            <label>프로젝트 제목</label>
+            <input type="text" id="port-title" placeholder="최대 100글자">
+        </div>
+        <div class="form-group">
+            <label>설명</label>
+            <textarea id="port-desc" placeholder="프로젝트 내용을 입력해주세요."></textarea>
+        </div>
+        <button id="btn-port" onclick="validPortfolio()">새로운 프로젝트 추가하기</button>
+        <div id="portfolio-list">
+
+        </div>
+    </section>
+    <script>
+        //     <포트폴리오>
+        //      - 제목은 최대 100글자까지 가능
+        //      - 제목이 100글자를 초과하면 alert "제목이 너무 깁니다."
+        
+        //      * 공통 : 비어있는 문자 불가(새로운 프로젝트 추가하기 버튼 클릭 시)
+        //          - 제목이 비어있다면 alert "제목을 입력해주세요"
+        //          - 설명이 비어있다면 alert "설명을 입력해주세요."
+
+        //      * 추가하기 성공 시
+        //          - 아래의 코드를 참고하여 내용을 추가하세요. (클래스 및 텍스트 노드 추가)
+        //             item.className = 'portfolio-item';
+        //             item.innerHTML = `<strong>${portTitle.value}</strong><p style="margin:5px 0 0; font-size:0.9rem;">${portDesc.value}</p>`;
+        
+        function validPortfolio() {
+            const portTitle = document.getElementById('port-title').value;
+            const portDesc = document.getElementById('port-desc').value;
+            const portfolioList = document.getElementById('portfolio-list');
+
+            
+            portfolioList.className = 'portfolio-item';
+            portfolioList.innerHTML = `<strong>${portTitle}</strong><p style="margin:5px 0 0; font-size:0.9rem;">${portDesc}</p>`;
+
+            
+
+    // 목록에 추가
+    portfolioList.appendChild(item);
+          
+
+            if(portTitle === "") {
+                alert("제목을 입력해주세요.");
+            } else if(portDesc === "") {
+                alert("설명을 입력하주세요.");
+            } else if(portTitle.length > 100) {
+                alert("제목이 너무 깁니다.");
+            } 
+
+            
+        }
+    
+    </script>
+
+
+    <section class="contact-section">
+        <h2>연락하기</h2>
+        <div class="form-group">
+            <label>이름</label>
+            <input type="text" id="contact-name" placeholder="한글 이름">
+        </div>
+        <div class="form-group">
+            <label>이메일</label>
+            <input type="email" id="contact-email" placeholder="example@test.com">
+        </div>
+        <div class="form-group">
+            <label>메시지</label>
+            <textarea id="contact-msg" maxlength="500" placeholder="메시지를 입력해 주세요 (최대 500자)"></textarea>
+            <div class="char-count"><span id="msg-count">0</span> / 500</div>
+        </div>
+        <button id="btn-contact" onclick="validContact()">전송</button>
+    </section>
+    <script>
+        //     <연락하기>
+        //      - 이름 : 한글만 가능
+        //      - 이메일 : 이메일 주소가 유효한지 확인   ex) test@test.com
+        //      - 메시지 : 사용자가 입력한 글자를 실시간으로 업데이트 / 최대 500글자까지 사용 가능
+
+        //      * 전송 버튼 클릭 시
+        //          - 이름에 한글말고 다른게 있으면 alert "이름은 한글만 사용 가능합니다"
+        //          - 이메일 주소가 유효하지 않으면 alert "이메일 양식이 유효하지 않습니다."
+
+        //     * 공통 : 비어있는 문자 불가(전송 버튼 클릭 시)
+        //          - 이름이 비어있다면 alert "이름을 입력해주세요"
+        //          - 이메일이 비어있다면 alert "이메일을 입력해주세요."
+        //          - 메시지가 비어있다면 alert "메시지를 입력해주세요."
+        function validContact() {
+            const contactName = document.getElementById('contact-name').value;
+            const contactEmail = document.getElementById('contact-email').value;
+            const contactMsg = document.getElementById('contact-msg');
+            
+            const pattern1 = /^[가-힣]/;
+            const pattern2 = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+            const pattern3 = /{,500}/;
+    
+            if(contactName === "") {
+                alert("이름을 입력해주세요.");
+            } else if(!(pattern1.test(contactName))) {
+                alert("이름은 한글만 사용 가능합니다.");
+            } else if(contactEmail === "") {
+                alert("이메일을 입력해주세요.");  
+            } else if(!(pattern2.test(contactEmail))) {
+                alert("이메일 양식이 유효하지 않습니다.");
+            } else if(contactMsg === "") {
+                alert("메시지를 입력해주세요.");
+            } else {
+                contactMsg.textContent = contactMsg.value;
+                alert("전송 완료!");
+            }
+    }
+        
+
+
+    </script>
+
+
+    <section class="join-section">
+        <h2>회원가입</h2>
+        <div class="form-group">
+            <label>이름</label>
+            <input type="text" id="join-name" placeholder="한글만 입력" onkeyup="keyboardFunc()">
+            <div id="msg-name" class="msg"></div>
+        </div>
+        <div class="form-group">
+            <label>아이디</label>
+            <input type="text" id="join-id" placeholder="5~20자 영문, 숫자, _, -" onkeyup="keyboardFunc()">
+            <div id="msg-id" class="msg"></div>
+        </div>
+        <div class="form-group">
+            <label>비밀번호</label>
+            <input type="password" id="join-pw" placeholder="8~16자 대소문자/특수/숫자 포함" onkeyup="keyboardFunc()">
+            <div id="msg-pw" class="msg"></div>
+        </div>
+        <div class="form-group">
+            <label>비밀번호 확인</label>
+            <input type="password" id="join-pw2" placeholder="비밀번호 재입력" onkeyup="keyboardFunc()">
+            <div id="msg-pw2" class="msg"></div>
+        </div>
+        <button id="btn-join" onclick="validSignup()">회원 가입</button>
+    </section>
+    <script>
+        //     <회원가입>
+        //      - 이름 : 한글만 가능
+        //      - 아이디 : 영어, 숫자, 특수기호(_),(-)만 가능 / 5자 이상 20자 이하
+        //      - 비밀번호 : 대소문자 또는 특수문자, 숫자 최소 1개 이상 / 8자리 이상 16자 이하
+        //      - 비밀번호 확인 : 비밀번호와 동일해야 함
+
+        //      * 일치하지 않을 경우 input의 아래 부분에 텍스트 출력(keyup 이벤트 활용)
+        //          - 이름이 일치하지 않을 경우 : "한글만 사용 가능합니다."    // 색상 red
+        //          - 이름이 일치할 경우 : ""   (빈 문자열 출력)
+
+        //      - 아이디가 일치하지 않을 경우 : "5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다."    // 색상 red
+        //      - 아이디가 일치할 경우 : "사용 가능한 아이디입니다."    // 색상 green
+
+        //      - 비밀번호가 일치하지 않을 경우 : "8~16자의 영문 대/소문자, 숫자, 특수문자를 사용해 주세요."    // 색상 red
+        //      - 비밀번호가 일치할 경우 : "사용 가능한 비밀번호입니다."    // 색상 green
+
+        //      - 비밀번호 확인이 비밀번호와 일치하지 않을 경우 : 비밀번호가 일치하지 않습니다."    // 색상 red
+        //      - 비밀번호 확인이 비밀번화 일치할 경우 : "비밀번호가 일치합니다."    // 색상 green
+
+        //      * 공통 : 비어있는 문자 불가(회원 가입 버튼 클릭 시) 
+        //          - 비어있다면 alert "이름을 입력해주세요."
+        //          - 아이디가 비어있다면 alert "아이디를 입력해주세요."
+        //          - 비밀번호가 비어있다면 alert "비밀번호를 입력해주세요."
+        //          - 비밀번호 확인이 일치하지 않는다면 alert "비밀번호가 일치하지 않습니다"
+
+	    //	    * 공통 : 모든 유효성 검사가 통과해야 회원가입 버튼 클릭 시 "회원가입이 완료되었습니다" alert 출력
+	    // 		    - 유효성 검사가 1개라도 실패했다면 "입력값을 다시 확인해주세요." alert 출력
+        let isOk = true;
+        let isSubmit = false;
+
+        function validSignup() {
+            isOk = true;
+
+             if (isSubmit) {
+                const joinName = document.getElementById('join-name').value.trim();
+                const joinId   = document.getElementById('join-id').value.trim();
+                const joinPw   = document.getElementById('join-pw').value;
+                const joinPw2  = document.getElementById('join-pw2').value;
+
+                if (joinName === "") { alert("이름을 입력해주세요."); return false; }
+                if (joinId === "")   { alert("아이디를 입력해주세요."); return false; }
+                if (joinPw === "")   { alert("비밀번호를 입력해주세요."); return false; }
+                if (joinPw2 === "")  { alert("비밀번호 확인을 입력해주세요."); return false; }
+            }
+            
+            validName();
+            validId();
+            validPw();
+        
+            if(isSubmit) {
+                if(isOk) {
+                    alert("회원가입이 완료되었습니다");
+                } else {
+                    alert("입력값을 다시 확인해주세요.");
+                }
+            }
+
+            return isOk;
+        }
+
+        function validName() {
+            const joinName = document.getElementById('join-name').value;
+            const msgName = document.getElementById('msg-name');
+            const pattern1 = /^[가-힣]+$/;
+
+            if(joinName !== "") {
+                if(!pattern1.test(joinName)) {
+                    msgName.textContent = "한글만 사용 가능합니다.";
+                    msgName.style.color = "red";
+                    msgName.style.fontSize = "12px";
+                    isOk = false;
+                } else{
+                    msgName.textContent = "";
+                }
+            }
+
+        }
+
+        function validId() {
+            const joinId = document.getElementById('join-id').value;
+            const msgId = document.getElementById('msg-id');
+
+            const pattern2 = /^[A-Za-z0-9_-]{5,20}$/;
+
+            if(joinId !== "") {
+                if(!pattern2.test(joinId)) {
+                    msgId.textContent = "5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.";
+                    msgId.style.color = "red";
+                    msgId.style.fontSize = "12px";
+                    isOk = false;
+                } else{
+                    msgId.textContent = "사용 가능한 아이디입니다.";
+                    msgId.style.color = "green";
+                    msgId.style.fontSize = "12px";
+                } 
+            }
+        }
+
+        function validPw() {
+            const joinPw = document.getElementById('join-pw').value;
+            const joinPw2 = document.getElementById('join-pw2').value;
+           
+            const msgPw = document.getElementById('msg-pw');
+            const msgPw2 = document.getElementById('msg-pw2');
+
+            const pattern3 = /^(?=.*[A-Za-z])(?=.*[!@#$])(?=.*[0-9])[A-Za-z!@#$0-9]{8,16}$/;
+
+            if(joinPw !== "") {
+                if(!pattern3.test(joinPw)) {
+                    msgPw.textContent = "8~16자의 영문 대/소문자, 숫자, 특수문자를 사용해 주세요.";
+                    msgPw.style.color = "red";
+                    msgPw.style.fontSize = "12px";
+                    isOk = false;
+                } else if(pattern3.test(joinPw)){
+                    msgPw.textContent = "사용 가능한 비밀번호입니다.";
+                    msgPw.style.color = "green";
+                    msgPw.style.fontSize = "12px";
+                }
+            }
+            
+            if (joinPw2 !== "") {
+                if (joinPw !== joinPw2) {
+                    msgPw2.textContent = "비밀번호가 일치하지 않습니다.";
+                    msgPw2.style.color = "red";
+                    msgPw2.style.fontSize = "12px";
+                    isOk = false;
+                } else if (joinPw === joinPw2){
+                    msgPw2.textContent = "비밀번호가 일치합니다.";
+                    msgPw2.style.color = "green";
+                    msgPw2.style.fontSize = "12px";
+                }
+            }
+            
+            
+        }
+
+        
+        function keyboardFunc() {
+            document.getElementById("join-name").addEventListener("keyup", validSignup);
+            document.getElementById("join-id").addEventListener("keyup", validSignup);
+            document.getElementById("join-pw").addEventListener("keyup", validSignup);
+            document.getElementById("join-pw2").addEventListener("keyup", validSignup);
+}
+    </script>
+</body>
+</html>
