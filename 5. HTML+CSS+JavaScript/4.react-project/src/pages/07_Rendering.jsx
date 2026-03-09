@@ -3,7 +3,7 @@ import Child from "../components/07_Child"
 export default function Rendering() {
     return (
         <>
-            <Child name={'짱구'}/>
+            <Child name={'철수'} count={1}/>
         </>
     )
 }

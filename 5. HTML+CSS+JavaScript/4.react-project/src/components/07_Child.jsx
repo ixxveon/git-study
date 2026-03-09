@@ -1,5 +1,5 @@
 
-export default function Child({name}) {
+export default function Child({name, count}) {
     // 조건부 렌더링
     // - 특정 조건이 해당할 경우에만 렌더링하는 방식(if문, 삼항연산자)
 
@@ -23,7 +23,12 @@ export default function Child({name}) {
                     -> 조건식이 true면 렌더링, false면 렌더링하지 않음
                     -> 렌더링할 요소는 1개여야 함 (2개 이상은 에러)
             */}
-            {name !== '짱구' && '짱구가 아닙니다.'}
+            {name !== '짱구' && <>
+                                    <p>'짱구가 아닙니다.'</p>
+                                    <p>asdf</p>
+                                </>}
+            {count === 1 && <p>count의 값은 1입니다.</p>}
+                                        
         </>
     )
 }
