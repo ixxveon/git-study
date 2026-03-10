@@ -12,7 +12,7 @@ export default function Lifting() {
     return (
         <>
             <Child1 count={count} setCount={setCount}/>
-            <Child2 count={count} setCount={setCount}/>
+            <Child2 count={count} setCount={setCount}/> 
         </>
     )
 }

@@ -1,5 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { QueryClientProvider } from '@tanstack/react-query'
+import { QueryConfig } from './config/QueryConfig.js'
+
 import './index.css'
 import App from './App.jsx'
 import NewVariable from './components/01_NewVariable.jsx'
@@ -24,6 +27,18 @@ import State from './pages/10_State.jsx'
 import UseState from './pages/11_UseState.jsx'
 import FormHendling from './pages/12_FormHandling.jsx'
 import Lifting from './pages/13_Lifting.jsx'
+import Counter from './pages/14_Counter.jsx'
+import Counter2 from './pages/15_Counter.jsx'
+import ThemeToggle from './pages/15_ThemeToggle.jsx'
+import NameInput from './pages/16_NameInput.jsx'
+import OtherPage from './pages/17_OtherPage.jsx'
+import VisitCount from './pages/17_VisitCount.jsx'
+import Toast from './pages/18_Toast.jsx'
+import Gugudan from './pages/training/Q10_Gugudan.jsx'
+import Dropdown from './pages/19_Dropdown.jsx'
+import NumberList from './pages/20_NumberList.jsx'
+import GetUsers from './pages/21_GetUsers.jsx'
+import GetUsers2 from './pages/22_getUsers.jsx'
 
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 
@@ -80,6 +95,46 @@ const router = createBrowserRouter([
     path: "/13",
     element: <Lifting/>
   },
+  {
+    path: "/14",
+    element: <Counter/>
+  },
+  {
+    path: "/15",
+    element: <ThemeToggle/>
+  },
+  {
+    path: "/16",
+    element: <NameInput/>
+  },
+  {
+    path: "/17",
+    element: <VisitCount/>
+  },
+  {
+    path: "/17_Other",
+    element: <OtherPage/>
+  },
+  {
+    path: "/18",
+    element: <Toast/>
+  },
+  {
+    path: "/19",
+    element: <Dropdown/>
+  },
+  {
+    path: "/20",
+    element: <NumberList/>
+  },
+  {
+    path: "/21",
+    element: <GetUsers/>
+  },
+  {
+    path: "/22",
+    element: <GetUsers2/>
+  },
 
   // ===========================================================================================================
   {
@@ -117,11 +172,17 @@ const router = createBrowserRouter([
   {
     path: "/Q9",
     element: <ResultPage/>
+  },
+  {
+    path: "/Q10",
+    element: <Gugudan/>
   }
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={QueryConfig}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </StrictMode>
 )

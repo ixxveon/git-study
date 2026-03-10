@@ -9,7 +9,7 @@ export default function ObjectState() {
         // - prevUser : 이전 State (매개변수 부분)
         // - ...prevUser : 기존 객체 복사
         // - name: "홍길동" : 해당 객체의 name 값 변경
-        setUser(prevUser => ({ ...prevUser, name:"홍길동"}))
+        setUser(prevUser => ({ ...prevUser, name:"홍길동"})) // 새로운 객체를 넣어줘야 렌더링 해 줌
 
         // user.name = "홍길동"; 
         // setUser(user); // 렌더링 안함 그래서 변경 x 새로운 객체를 넣어줘야 변경됨
