@@ -1,7 +1,7 @@
 import useGugudanStore from "../../store/training/Q10_GugudanStore"
 
 export default function Gugudan() {
-    const {a, b, useAnswer, result, setA, setB, setUserAnswer} = useGugudanStore();
+    const {a, b, userAnswer, result, setA, setB, setUserAnswer, checkAnswer, reset} = useGugudanStore();
    
     return(
         <>
@@ -21,17 +21,18 @@ export default function Gugudan() {
             </p>
             
             {/* 값이 들어 왔을 때 입력 값 가져와서 setUserAnswer에 넣음 */}
-            <input type="number" onChange={(e) => setUserAnswer(e.target.value)}/>
-            <button>정답 확인</button>
-            <button style={{marginLeft: '10px'}}>초기화</button>
+            <input type="number" id="userAnswer" value={userAnswer} onChange={(e) => setUserAnswer(e.target.value)}/>
+            <button onClick={checkAnswer}>정답 확인</button>
+            <button style={{marginLeft: '10px'}} onClick={reset}>초기화</button>
 
             {/* 
                 사용자가 입력한 숫자가 정답일 경우 '정답 입니다!' 출력
                 정답이 아닐 경우 '오답 입니다!' 출력
             */}
 
-          
-                <p style={{marginTop: '10px'}}>{status} 입니다!</p>
+            {result && (
+                <p style={{marginTop: '10px'}}>{result}</p>
+            )}
          
         </>
     )

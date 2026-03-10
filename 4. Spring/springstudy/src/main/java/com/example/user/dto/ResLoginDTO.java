@@ -1,7 +1,5 @@
 package com.example.user.dto;
 
-import java.time.LocalDateTime;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,10 +12,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class ResLoginDTO {
-	private Long id;
-	private String userName;
-	private String nickname;
 	private String email;
-	private String phoneNumber;
-	private LocalDateTime createdAt;
+	private String password;
 }

@@ -1,81 +1,69 @@
 package com.example.user.service.impl;
 
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.example.user.dto.ReqLoginDTO;
 import com.example.user.dto.ReqSignupDTO;
+import com.example.user.dto.ReqUserDTO;
 import com.example.user.dto.ResLoginDTO;
 import com.example.user.entity.User;
 import com.example.user.repository.UserRepository;
 import com.example.user.service.UserService;
 
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-@Transactional
 public class UserServiceImpl implements UserService {
 	private final UserRepository userRepository;
-	private final PasswordEncoder passwordEncoder;
+	private final BCryptPasswordEncoder passwordEncoder;
 	
 	@Override
 	public void signup(ReqSignupDTO request) {
-		// 1. 이메일 중복 확인
-		if (userRepository.existsByEmail(request.getEmail())) {
+		
+		// 1. 비밀번호 & 비밀번호 확인 검증
+		if(request.getPassword() != null && !request.getPassword().equals(request.getPasswordCheck())) {
+			throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
+		}
+			
+		// 2. 이메일 중복 체크
+		if(userRepository.existsByEmail(request.getEmail())) {
 			throw new IllegalArgumentException("이미 사용 중인 이메일입니다.");
 		}
-		
+			
+		// 3. 닉네임 중복 체크
 		// 2. 닉네임 중복 확인
 		if (userRepository.existsByNickname(request.getNickname())) {
 			throw new IllegalArgumentException("이미 사용 중인 아이디입니다.");
 		}
-		
-		// 3. 비밀번호 체크 
-		if (request.getPassword() != null &&
-			!request.getPassword().equals(request.getPasswordCheck())) {
-			throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
-		}
-		
-		// 4. 비밀번호 암호화
+		// 4. 비밀번호 암호화 (Spring Security의 BCrypt 사용)
 		String encodedPassword = passwordEncoder.encode(request.getPassword());
 		
-		// 5. DTO -> Entity 변환
+		// 5. Entity로 변경
 		User user = User.builder()
-					.userName(request.getUserName())
+				    .name(request.getName())
 				    .email(request.getEmail())
 				    .nickname(request.getNickname())
 				    .password(encodedPassword)
-				    .phoneNumber(request.getPhoneNumber())
+				    .region("미설정")
 				    .build();
-		// 6. 저장
+		
+		// 6. DB에 저장
 		userRepository.save(user);
 	}
 	
-	@Override
-	public ResLoginDTO login(ReqLoginDTO request) {
-		// 1. 존재하는 이메일인지 없으면 로그인 실패
-		User user = userRepository.findByEmail(request.getEmail()) 
-			.orElseThrow(() -> new IllegalArgumentException("존재하지 않는 이메일입니다."));
+	public ResLoginDTO login(ReqSignupDTO request) {
+		// 1. 해당 이메일을 가진 유저가 있는지
+		User user = userRepository.findByEmail(request.getEmail());
 		
-		
-		// 2. 존재하는 비번인지(암호화됨)
-		if(!passwordEncoder.matches(request.getPassword(),user.getPassword())) {
-			throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
+		// 3. 사용자가 입력한 비밀번호가 암호화된 비밀번호와 일치하는지 검증
+		//	- 일치하면 응답 객체 반환
+		//	- 일치하지 않으면 null 반환
+		if(!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+			return null;
 		}
 		
-		// 3. 성공시 dto
 		ResLoginDTO response = ResLoginDTO.builder()
-							   .id(user.getId())
-							   .userName(user.getUserName())
-							   .email(user.getEmail())
-							   .nickname(user.getNickname())
-							   .phoneNumber(user.getPhoneNumber())
-							   .createdAt(user.getCreatedAt())
-							   .build();
-		
-		return response;
-				
+							   .
 	}
 }

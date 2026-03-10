@@ -15,7 +15,14 @@ const useGugudanStore = create((set, get) => ({
          
         //   내가 넣은곳:   조건
         set({ result: resultCheck ? '정답 입니다!' : '오답 입니다!'})
-    }
+    },
+
+    reset: () => set({
+        a: "",
+        b: "",
+        userAnswer: "",
+        result: ""
+    })
 }))
 
 export default useGugudanStore;

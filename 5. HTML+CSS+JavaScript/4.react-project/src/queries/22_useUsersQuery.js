@@ -1,6 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { getUser } from "../api/22_Axiox";
 
+// getUser : API 요청 함수
+// Axios : 서버에서 데이터 가져오는 도구
+// Tanstack Query : API 데이터를 관리하는 도구
 export default function useUsersQuery(enabled) {
     return useQuery({
         queryKey: ['users'], // 해당 쿼리의 캐시 키 (식별자)
