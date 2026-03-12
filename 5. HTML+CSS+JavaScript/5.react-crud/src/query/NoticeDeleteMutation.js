@@ -7,7 +7,7 @@ export const useNoticeDeleteMutation = () => {
     const navigate = useNavigate();
 
     return useMutation({
-        mutationFn: noticeDeleteApi(postId),
+        mutationFn: (postId) => noticeDeleteApi(postId),
         onSuccess: () => {
             alert("게시글이 삭제되었습니다.");
             navigate('/notice/list');
