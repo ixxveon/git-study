@@ -1,5 +1,7 @@
 import axiosInstance from "./AxiosInstance"
 
+// async, await 비동기함수로 만들어야함
+// api 요청이 가면 기다렸다가 응답이 오면 리턴
 // 공지사항 목록 조회
 export const noticeListApi = async (page = 1) => {
     const response = await axiosInstance.get("/api/board/notice", {
@@ -17,15 +19,15 @@ export const noticeDetailApi = async (postId) => {
     try {
         const response = await axiosInstance.get(`api/board/notice/${postId}`, {
             withCredentials: true
-    })
+        })
 
-    return response.data;
-    } catch(err) {
+        return response.data;
+    } catch (err) {
         // 서버가 응답을 했는데 상태코드가 4xx, 5xx
-        if(err.response) {
+        if (err.response) {
             console.log('응답 데이터: ', err.response.data);
             throw err;
-        } else if(err.request) {
+        } else if (err.request) {
             // 요청은 보냈는데 서버가 응답을 하지 않음
             console.error('서버에 연결할 수 없습니다.');
             throw err;
@@ -37,20 +39,21 @@ export const noticeDetailApi = async (postId) => {
     }
 }
 
+
 // 게시글 삭제하기
-export const noticeDeleteApi = async (postId) => {
+export const noticeDeleteApi = async ({postId, formData}) => {
     try {
-        const response = await axiosInstance.delete(`api/board/notice/${postId}`, {
+        const response = await axiosInstance.delete(`/api/board/notice/${postId}`, formData, {
             withCredentials: true
         })
-    
-    return response.data;
-    } catch(err) {
+
+        return response.data;
+    } catch (err) {
         // 서버가 응답을 했는데 상태코드가 4xx, 5xx
-        if(err.response) {
+        if (err.response) {
             console.log('응답 데이터: ', err.response.data);
             throw err;
-        } else if(err.request) {
+        } else if (err.request) {
             // 요청은 보냈는데 서버가 응답을 하지 않음
             console.error('서버에 연결할 수 없습니다.');
             throw err;
@@ -61,5 +64,44 @@ export const noticeDeleteApi = async (postId) => {
         }
     }
 
-    
+
+
+}
+
+// 게시글 수정하기
+export const noticeEditApi = async (postId) => {
+    try {
+        const response = await axiosInstance.put(`/api/board/notice/${postId}`, {
+            withCredentials: true
+        })
+        return response.data;
+    } catch (err) {
+        if (err.response) {
+            console.log('응답 데이터: ', err.response.data);
+            throw err;
+        } else if (err.request) {
+            // 요청은 보냈는데 서버가 응답을 하지 않음
+            console.error('서버에 연결할 수 없습니다.');
+            throw err;
+        } else {
+            // 요청 중 에러 발생했을 때
+            console.error('요청 중 에러 발생: ', err.message);
+            throw err;
+        }
+    }
+}
+
+
+export const noticeCreateApi = async (formData) => {
+    const response = await axiosInstance.post("/api/board/notice",
+        formData,
+        {
+            withCredentials: true,
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        }
+    )
+
+    return response.data;
 }

@@ -7,6 +7,7 @@ import { useNoticeDeleteMutation } from "../query/NoticeDeleteMutation";
 
 export const useNoticeDetailHook = () => {
     
+    const noticeDeleteMutation = useNoticeDeleteMutation();
     const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     // 경로파라미터 가져오기
@@ -34,8 +35,8 @@ export const useNoticeDetailHook = () => {
     }
 
     // 수정 페이지로 이동
-    const goToEdit = () => {
-        if(postId) navigate(`notice/edit/${postId}`)
+    const goToEdit = (postId) => {
+        if(postId) navigate(`/notice/edit/${postId}`);
     }
 
     // 삭제 모달 열기
@@ -50,7 +51,7 @@ export const useNoticeDetailHook = () => {
 
     // 게시글 삭제
     const confirmDelete = () => {
-        // TODO: 삭제 Query 연동 예정
+        // TODO: 삭제 Query 연동 예정 
         // - query/NoticeDeleteMutation.js
         //      > 함수명: useNoticeDeleteMutation
         // - 전달 시 postId 주기
@@ -58,13 +59,14 @@ export const useNoticeDetailHook = () => {
         //      > 함수명: noticeDeleteApi
         //      > URI: /api/board/{postId}
         //      > Method: DELETE
-        const deleteMutation = useNoticeDeleteMutation();
-        deleteMutation.mutate(postId);
+        noticeDeleteMutation.mutate(postId);
         
         alert("게시글이 삭제되었습니다.");
         closeDeleteModal();
         goToList(); // 리스트 페이지로 이동
     }
+    
+    
 
     return {data, 
             postId, 

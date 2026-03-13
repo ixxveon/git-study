@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -57,22 +58,22 @@ public class NoticeController {
 		return ResponseEntity.ok(response);
 	} 
 	
-	@PostMapping("/create")
-	public String create(ReqBoardDTO request, HttpSession session,
+	@PostMapping
+	public ResponseEntity<String> create(ReqBoardDTO request, HttpSession session,
 						 @RequestParam(value = "files", required = false) List<MultipartFile> files) {	
 		// 1. 로그인한 사용자 정보 세션에서 꺼내기
 		ResLoginDTO loginUser = (ResLoginDTO) session.getAttribute("LOGIN_USER");
 		 
 		// 2. 로그인한 사용자가 아니라면 로그인 페이지로 이동
 		if (loginUser == null) {
-			return "redirect:/member/login/form";
+			return ResponseEntity.notFound().build();
 		}
 		
 		// 3. 게시글 저장
 		boardService.write(request, files, loginUser.getId());
 		
 		// 4. 목록으로 이동
-		return "redirect:/board/notice";
+		return ResponseEntity.ok("성공");
 	}
 	
 	/**
@@ -86,21 +87,21 @@ public class NoticeController {
 		return "pages/board/notice-edit";
 	}
 	
-	@PostMapping("/edit")
-	public String edit(ReqBoardDTO request, HttpSession session,
+	@PutMapping
+	public ResponseEntity<String> edit(ReqBoardDTO request, HttpSession session,
 					   @RequestParam(value = "files", required = false) List<MultipartFile> files) {
 		// 1. 로그인한 사용자 조회
 		ResLoginDTO loginUser = (ResLoginDTO) session.getAttribute("LOGIN_USER"); 
 		
 		// 2. 로그인하지 않은 사용자는 수정 불가
 		if (loginUser == null) {
-			return "redirect:/member/login/form";
+			return ResponseEntity.notFound().build();
 		}
 		
 		// 3. 게시글 수정 진행
 		boardService.edit(request, files, loginUser.getId());
 		
-		return "redirect:/board/notice/detail?id=" + request.getId();
+		return ResponseEntity.ok("성공");
 	}
 	
 	@DeleteMapping("/{id}")
@@ -118,6 +119,7 @@ public class NoticeController {
 		boardService.delete(id, loginUser.getId());
 		
 		return ResponseEntity.ok("성공");
+		
 	}
 }
 
