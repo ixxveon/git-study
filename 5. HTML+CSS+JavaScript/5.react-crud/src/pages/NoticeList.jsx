@@ -93,7 +93,8 @@ export default function NoticeList() {
             <div className="container">
                 <div
                     style={{
-                        display: "flex",
+                        display: "flex", 
+                        
                         justifyContent: "space-between",
                         alignItems: "center",
                         marginBottom: "2rem"

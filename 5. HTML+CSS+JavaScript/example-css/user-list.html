@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="user-list.css">
+    
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            KoreaNirsa
+        </div>
+
+        <div class="header-right">
+            <span>admin@example.com</span>
+            <button class="logout-btn">로그아웃</button>
+        </div>
+    </div>
+
+    <div class="main">
+
+        <div class="sidebar">
+            <button class="sidebar-btn">회원목록</button>
+        </div>
+
+        <div class="content">
+            <h2>회원 목록</h2>
+            <br>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>이름</th>
+                        <th>이메일</th>
+                        <th>상세</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>홍길동</td>
+                        <td>hong@example.com</td>
+                        <td>
+                            <button class="detail-btn" onclick="goDetail()">보기</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<script src="user-list.js"></script>
+  
+</body>
+
+</html>

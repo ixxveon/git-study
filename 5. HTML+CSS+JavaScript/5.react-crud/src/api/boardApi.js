@@ -35,7 +35,7 @@ export const noticeDetailApi = async (postId) => {
             // 요청 중 에러 발생했을 때
             console.error('요청 중 에러 발생: ', err.message);
             throw err;
-        }
+        }  
     }
 }
 
