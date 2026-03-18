@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const API_BASE_URL = 'https://d3ijeqnqadejib.cloudfront.net';
+
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:8080',
+    baseURL: API_BASE_URL,
     timeout: 10000,
     header: {
         'Content-Type': 'application/json'
