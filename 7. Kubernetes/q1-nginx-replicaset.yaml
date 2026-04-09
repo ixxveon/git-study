@@ -1,0 +1,18 @@
+  # - Pod는 5개 유지
+  #  - nginx-final 이라는 label을 가진 Pod 관리
+  #  - 파드를 생성할 템플릿 작성
+  #     > 이미지는 nginx, 컨테이너 포트는 80
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: q1-nginx-replicaset
+  labels:
+    app: nginx-final
+
+spec:
+  replicas: 5
+  containers:
+    - name: nginx 
+      image: nginx:latest 
+      ports:
+        - containerPort: 80 

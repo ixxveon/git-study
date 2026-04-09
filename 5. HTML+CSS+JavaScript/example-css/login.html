@@ -5,69 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="login.css">
-    <style>
-        * {
-            margin:0;
-            padding:0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            height:100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f4f6f9;
-        }
-
-        .login-card {
-            width: 350px;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-           
-        }
-
-        .login-card h2 {
-            margin-inline-start:25px;
-        }
-
-        .input-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 6px;
-            font-size: 14px;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 5px;
-            border: none;
-            border-radius: 5px;
-            background: #2563ed;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .login-btn:hover{
-            background: #1d4ed8;
-        }
-
-    </style>
+    
 </head>
 <body>
     <div class="login-card">
@@ -88,20 +26,6 @@
         </form>
     </div>
 
-    <script>
-        function login() {
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-
-            if(email === "hong@example.com" && password === "qwer1234") {
-                alert("로그인 성공!");
-
-
-                location.href = "users-list.html"
-            } else {
-                alert("이메일 또는 비밀번호가 올바르지 않습니다.");
-            }
-        }
-    </script>
+    <script src="login.js"></script>
 </body>
 </html>
