@@ -1,7 +1,10 @@
 from pydantic import BaseModel
 
 class GPTRequest(BaseModel):
-    prompt: str
+    genre: str
+    purpose: str
+    level: str
+    description: str
     max_completion_tokens: int = 20000
     temperature: float = 0.3
 
