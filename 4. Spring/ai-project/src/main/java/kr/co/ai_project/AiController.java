@@ -13,14 +13,13 @@ import lombok.RequiredArgsConstructor;
 public class AiController {
 	private final AiService aiService;
 	
-	@PostMapping("/generate")
-	public ResponseEntity<?> generate(@RequestBody AiDto.RequestAi req, HttpSession session) {
+	@PostMapping("/ai/generate")
+	public ResponseEntity<?> generate(@RequestBody AiDto.RequestAi req) {
 		
-		UserDto.ResponseLogin loginUser = (UserDto.ResponseLogin) session.getAttribute("LOGIN_USER");
+//		UserDto.ResponseLogin loginUser = (UserDto.ResponseLogin) session.getAttribute("LOGIN_USER");
+//		if (loginUser == null) return ResponseEntity.status(401).body("로그인이 필요합니다.");
 		
-		if (loginUser == null) return ResponseEntity.status(401).body("로그인이 필요합니다.");
-		
-		String result = aiService.callFastApi(loginUser.getUserId(), req.getPrompt());
+		String result = aiService.callFastApi(req.getGenre(), req.getPurpose(), req.getLevel(), req.getDescription());
 		
 		return ResponseEntity.ok(result);
 	}

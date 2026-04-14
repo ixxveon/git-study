@@ -8,7 +8,10 @@ public class AiDto {
 	@Setter
 	@Getter
 	public static class RequestAi {
-		private String prompt;
+		private String genre;
+		private String purpose;
+		private String level;
+		private String description;
 	}
 }
   

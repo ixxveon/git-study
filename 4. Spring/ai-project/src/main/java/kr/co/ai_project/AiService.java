@@ -9,6 +9,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 @Service
@@ -24,7 +25,7 @@ public class AiService {
 	 * @param prompt: 사용자가 입력한 AI에게 전달할 질문
 	 * @return FastAPI 응답 결과(String)
 	 */
-	public String callFastApi(String userId, String prompt) {
+	public String callFastApi(String genre, String purpose, String level, String description) {
 		// 1. 요청할 URL 설정
 		String url = "http://localhost:8000/gpt/generate";
 		
@@ -37,11 +38,14 @@ public class AiService {
 		
 		// -> 커스텀 헤더 추가
 		//    FastAPI에서 사용자 식별용으로 사용
-		headers.set("X-USER-ID", userId);
+//		headers.set("X-USER-ID", userId);
 		
 		// 3. 요청 Body 생성
 		Map<String, String> body = new HashMap();
-		body.put("prompt", prompt);
+		body.put("genre", genre);
+		body.put("purpose", purpose);
+		body.put("level", level);
+		body.put("description", description);
 		
 		// 4. HTTP 요청 객체 생성
 		// -> HttpEntity는 위에서 만든 Header + Body를 하나로 묶은 객체
@@ -49,9 +53,17 @@ public class AiService {
 		
 		// 5. 외부 API 호출 (FastAPI를 호출하는 부분)
 		// -> POST 요청으로 전송하고 응답을 ResponseEntity로 받겠다.
-		ResponseEntity<String> response = restTemplate.postForEntity(url, request, String.class);
-		
-		// 6. 요청 데이터 반환
-		return response.getBody();
+		try {
+            ResponseEntity<String> response = restTemplate.postForEntity(url, request, String.class);
+            return response.getBody();
+        } catch (HttpClientErrorException e) {
+            System.out.println("FastAPI 호출 실패");
+            System.out.println("status = " + e.getStatusCode());
+            System.out.println("body = " + e.getResponseBodyAsString());
+            throw e;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
 	}
 }

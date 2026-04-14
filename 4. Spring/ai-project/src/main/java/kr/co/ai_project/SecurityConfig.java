@@ -41,7 +41,7 @@ public class SecurityConfig {
       
       
       config.setAllowedOrigins(List.of("http://localhost:5173"));
-      config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE"));
+      config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
       config.setAllowedHeaders(List.of("*"));
       config.setAllowCredentials(true); // 세션, 쿠키 전달 허용
       
